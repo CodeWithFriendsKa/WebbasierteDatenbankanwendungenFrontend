@@ -1,10 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Group Guide</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="style.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" />
+
+    <script src="app.js"></script>
 </head>
 <body>
-
+<!--Navigation-->
+<nav>
+    <div class="toggle">
+        <i class="fas fa-bars bar" ></i>
+    </div>
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#logIn">LogIn</a></li>
+            <li><a data-toggle="tab" href="#register">Registrieren</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="tab-content">
+    <!-- Startseite -->
+    <div id="LogIn" class="tab-pane fade in active">
+        <main>
+            <div class="container">
+                <div class="top">
+                    <h2>Login</h2>
+                </div>
+                <p>test hallo</p>
+            </div>
+        </main>
+    </div>
+    <!-- Registrieren -->
+    <div class="tab-pane fade" id="register">
+        <div class="container">
+            <div class="top">
+                <h2 id="ue">Registrieren</h2>
+                <div class="formular">
+                    <button class="back" onclick="location.reload()"><i class="fas fa-chevron-left"></i></button>
+                    <form2>
+                        <!--Radio-Buttons-->
+                        <input type="radio" id="Trainer" name="Person" value="Trainer"/>
+                        <label for="Trainer">Trainer</label>
+                        <input type="radio" id="Spieler" name="Person" value="Spieler"/>
+                        <label for="Spieler">Spieler</label><br>
+                    </form2>
+                    <form>
+                        <!--Variablen-->
+                        <br>
+                        <input type="text"  placeholder="Vorname *" id="playerName"/>
+                        <span id="name-error"></span>
+                        <input type="text"  placeholder="Nachname *" id="playerName2"/>
+                        <span id="name-error2"></span>
+                        <input type="tel"  placeholder="Alter *" id="playerAge"/>
+                        <span id="tel-error"></span>
+                        <input type="email"  placeholder="E-Mail *" id="playerMail"/>
+                        <span id="email-error"></span>
+                        <input type="text"  placeholder="Passwort" id="playerPassword"/>
+                        <input type="text"  placeholder="Passwort wiederholen" id="playerPassword"/>
+                        <input type="text"  placeholder="Verifizierungcode" id="playerCode"/>
+                        <p> * erforderliches Feld </p><br>
+                        <button><a href="#test">Registrieren</a></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
