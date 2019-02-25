@@ -41,8 +41,23 @@
             <div class="container">
                 <div class="top">
                     <h1>Login</h1>
+                    <div class="formular">
+                        <form2>
+                            <input type="radio" id="Trainer" name="Person" value="Trainer"/>
+                            <label for="Trainer">Trainer</label>
+                            <input type="radio" id="Spieler" name="Person" value="Spieler"/>
+                            <label for="Spieler">Spieler</label><br>
+                        </form2>
+                        <form>
+                            <br>
+                            <input type="text"  placeholder="Emailadresse *" id="playerEmail"/>
+                            <span id="email-error"></span>
+                            <input type="password"  placeholder="Passwort *" id="playerPassword"/>
+                            <span id="password-error"></span>
+                            <button>Anmelden</button>
+                        </form>
+                    </div>
                 </div>
-                <p>test hallo</p>
             </div>
         </main>
     </div>
