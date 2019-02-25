@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="de" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Group Guide</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="style.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" />
+
+    <script src="app.js"></script>
+</head>
+<body>
+
+<!--Navigation-->
+<nav>
+    <div class="toggle">
+        <i class="fas fa-bars bar" ></i>
+    </div>
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#logIn">LogIn</a></li>
+            <li><a data-toggle="tab" href="#register">Registrieren</a></li>
+            <li><a data-toggle="tab" href="#spielerAnsicht">Spieleransicht</a></li>
+            <li><a data-toggle="tab" href="#trainerAnsicht">Traineransicht</a></li>
+            <li><a data-toggle="tab" href="#spielerListe">Spielerliste</a></li>
+            <li><a data-toggle="tab" href="#trainerListe">Trainerliste</a></li>
+            <li><a data-toggle="tab" href="#algorithmus">Algorithmus</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="tab-content">
+
+    <!-- Startseite -->
+    <div id="LogIn" class="tab-pane fade in active">
+        <main>
+            <div class="container">
+                <div class="top">
+                    <h1>Login</h1>
+                </div>
+                <p>test hallo</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Registrieren -->
+    <div class="tab-pane fade" id="register">
+        <div class="container">
+            <div class="top">
+                <h1>Registrieren</h1>
+                <div class="formular">
+                    <form2>
+                        <button class="back" onclick="location.reload()"><i class="fas fa-chevron-left"></i></button><br><br>
+                        <!--Radio-Buttons-->
+                        <input type="radio" id="Trainer" name="Person" value="Trainer"/>
+                        <label for="Trainer">Trainer</label>
+                        <input type="radio" id="Spieler" name="Person" value="Spieler"/>
+                        <label for="Spieler">Spieler</label><br>
+                    </form2>
+                    <form>
+                        <!--Variablen-->
+                        <br>
+                        <input type="text"  placeholder="Vorname *" id="playerName"/>
+                        <span id="name-error"></span>
+                        <input type="text"  placeholder="Nachname *" id="playerName2"/>
+                        <span id="name-error2"></span>
+                        <input type="tel"  placeholder="Alter *" id="playerAge"/>
+                        <span id="tel-error"></span>
+                        <input type="email"  placeholder="E-Mail *" id="playerMail"/>
+                        <span id="email-error"></span>
+                        <input type="text"  placeholder="Passwort" id="playerPassword"/>
+                        <input type="text"  placeholder="Passwort wiederholen" id="playerPassword"/>
+                        <input type="text"  placeholder="Verifizierungcode" id="playerCode"/>
+                        <p> * erforderliches Feld </p><br>
+                        <button><a href="#test">Registrieren</a></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spieleransicht -->
+    <div class="tab-pane fade" id="spielerAnsicht">
+        <div class="container">
+            <div class="top">
+                <h1>Spieleransicht</h1>
+            </div>
+            <div class="box">
+                <b>Training</b><br><br>
+                <p>Uhrzeit:</p>
+                <p>Trainer:</p>
+                <p>Mitspieler:</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Traineransicht -->
+    <div class="tab-pane fade" id="trainerAnsicht">
+        <div class="container">
+            <div class="top">
+                <h1>Traineransicht</h1>
+            </div>
+            <div class="box">
+                <a href="">Training 1</a>
+                <p>15:30</p>
+                <hr>
+                <a href="">Training 2</a>
+                <p>20:30</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spielerliste -->
+    <div class="tab-pane fade" id="spielerListe">
+        <div class="container">
+            <div class="top">
+                <h1>Spielerliste</h1>
+            </div>
+            <table>
+                <tr>
+                    <th>Nr.</th>
+                    <th>Name</th>
+                    <th>Geburtsdatum</th>
+                    <th>Adresse</th>
+                    <th>LK</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Max Mustermann</td>
+                    <td>01.01.01</td>
+                    <td>Musterstraße 123</td>
+                    <td>18</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Trainerliste -->
+    <div class="tab-pane fade" id="trainerListe">
+        <div class="container">
+            <div class="top">
+                <h1>Trainerliste</h1>
+            </div>
+            <table>
+                <tr>
+                    <th>Nr.</th>
+                    <th>Name</th>
+                    <th>Geburtsdatum</th>
+                    <th>Adresse</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Max Mustermann</td>
+                    <td>01.01.01</td>
+                    <td>Musterstraße 123</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Algorithmus -->
+    <div class="tab-pane fade" id="algorithmus">
+        <div class="container">
+            <div class="top">
+                <h1>Algorithmus</h1>
+            </div>
+            <button>Algorithmus konfigurieren</button><br><br>
+            <button>Algorithmus starten</button><br><br>
+            <table>
+                <tr>
+                    <th>Trainingsfeld:</th>
+                    <td><input type="text"  id="trainingField"/></td>
+                    <td><span id="trainingField-error"></span></td>
+                </tr>
+                <tr>
+                    <th>Trainingszeiten:</th>
+                    <td><input type="text"  id="trainingTimes"/></td>
+                    <td><span id="trainingTimes-error"></span></td>
+                </tr>
+                <tr>
+                    <th>Trainer:</th>
+                    <td><input type="text"  id="trainer"/></td>
+                    <td><span id="trainer-error"></span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
