@@ -1,22 +1,3 @@
-function validationLogIn(){
-    var emailLogIn= document.querySelector("#spielerEmailLogIn");
-    if (emailLogIn.value == "" || emailLogIn.value.indexOf("@") <= 0){
-        document.getElementById("emailErrorLogIn").innerHTML = "Bitte geben Sie Ihre Emailadresse ein";
-        return false;
-    }
-
-    else{
-        document.getElementById("emailErrorLogIn").innerHTML = "";
-    }
-
-    var passwortLogIn = document.querySelector("#spielerPasswortLogIn");
-    if (passwortLogIn.value==""){
-        document.getElementById("passwortErrorLogIn").innerHTML = "Bitte geben Sie Ihr Passwort ein";
-    }
-    else{
-        document.getElementById("passwortErrorLogIn").innerHTML = "";
-    }
-}
 function validationRegistrieren(){
     var name= document.querySelector("#spielerVorname");
     if (name.value == "" || !isNaN(name.value)) {
