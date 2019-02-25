@@ -11,7 +11,7 @@ form input {
 }
 form span {
     color: red;
-    font-size:0.8em;
+    font-size: 0.8em;
 }
 form button {
     text-align: center;
@@ -28,7 +28,6 @@ form2 {
     text-align: center;
     display: block;
 }
-
 
 /* Navigation*/
 nav {

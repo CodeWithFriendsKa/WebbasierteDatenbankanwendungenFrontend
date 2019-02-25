@@ -13,6 +13,7 @@
     <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" />
 
     <script src="app.js"></script>
+    <script src="registrieren.js"></script>
 </head>
 <body>
 
@@ -43,18 +44,18 @@
                     <h1>Login</h1>
                     <div class="formular">
                         <form2>
-                            <input type="radio" id="Trainer" name="Person" value="Trainer"/>
+                            <input type="radio" id="trainerLogIn" name="Person" value="Trainer"/>
                             <label for="Trainer">Trainer</label>
-                            <input type="radio" id="Spieler" name="Person" value="Spieler"/>
+                            <input type="radio" id="spielerLogIn" name="Person" value="Spieler"/>
                             <label for="Spieler">Spieler</label><br>
                         </form2>
                         <form>
                             <br>
-                            <input type="text"  placeholder="Emailadresse *" id="playerEmail"/>
-                            <span id="email-error"></span>
-                            <input type="password"  placeholder="Passwort *" id="playerPassword"/>
-                            <span id="password-error"></span>
-                            <button>Anmelden</button>
+                            <input type="text"  placeholder="Emailadresse *" id="spielerEmailLogIn"/>
+                            <span id="emailErrorLogIn"></span>
+                            <input type="password"  placeholder="Passwort *" id="spielerPasswortLogIn"/>
+                            <span id="passwortErrorLogIn"></span>
+                            <button onclick="validationLogIn(); return false">Anmelden</button>
                         </form>
                     </div>
                 </div>
@@ -71,27 +72,29 @@
                     <form2>
                         <button class="back" onclick="location.reload()"><i class="fas fa-chevron-left"></i></button><br><br>
                         <!--Radio-Buttons-->
-                        <input type="radio" id="Trainer" name="Person" value="Trainer"/>
+                        <input type="radio" id="trainerRegistrierung" name="Person" value="Trainer"/>
                         <label for="Trainer">Trainer</label>
-                        <input type="radio" id="Spieler" name="Person" value="Spieler"/>
+                        <input type="radio" id="spielerRegistrierung" name="Person" value="Spieler"/>
                         <label for="Spieler">Spieler</label><br>
                     </form2>
                     <form>
                         <!--Variablen-->
                         <br>
-                        <input type="text"  placeholder="Vorname *" id="playerName"/>
-                        <span id="name-error"></span>
-                        <input type="text"  placeholder="Nachname *" id="playerName2"/>
-                        <span id="name-error2"></span>
-                        <input type="tel"  placeholder="Alter *" id="playerAge"/>
-                        <span id="tel-error"></span>
-                        <input type="email"  placeholder="E-Mail *" id="playerMail"/>
-                        <span id="email-error"></span>
-                        <input type="text"  placeholder="Passwort" id="playerPassword"/>
-                        <input type="text"  placeholder="Passwort wiederholen" id="playerPassword"/>
-                        <input type="text"  placeholder="Verifizierungcode" id="playerCode"/>
+                        <input type="text"  placeholder="Vorname *" id="spielerVorname"/>
+                        <span id="vornameError"></span>
+                        <input type="text"  placeholder="Nachname *" id="spielerNachname"/>
+                        <span id="nachnameError"></span>
+                        <input type="number"  placeholder="Alter *" id="spielerAlter"/>
+                        <span id="alterError"></span>
+                        <input type="email"  placeholder="E-Mail *" id="spielerEmail"/>
+                        <span id="emailError"></span>
+                        <input type="password"  placeholder="Passwort" id="spielerPasswort"/>
+                        <span id="passwortError"></span>
+                        <input type="password"  placeholder="Passwort wiederholen" id="spielerPasswortWdh"/>
+                        <span id="passwortWdhError"></span>
+                        <input type="text"  placeholder="Verifizierungcode" id="spielerCode"/>
                         <p> * erforderliches Feld </p><br>
-                        <button><a href="#test">Registrieren</a></button>
+                        <button onclick="validationRegistrieren(); return false"><a href="#test">Registrieren</a></button>
                     </form>
                 </div>
             </div>
