@@ -1,4 +1,4 @@
-h2{
+html, body{
     text-align: center;
 }
 
@@ -95,4 +95,20 @@ li.suche:hover {
     .nav-tabs > li {
         float: none !important;
     }
+}
+.box {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+    margin-top: 1em;
+    border: 1px solid black;
+    border-radius: 0.5em;
+    padding: 0.5em;
+}
+table, th, tr, td {
+    border: 1px solid black;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
 }
