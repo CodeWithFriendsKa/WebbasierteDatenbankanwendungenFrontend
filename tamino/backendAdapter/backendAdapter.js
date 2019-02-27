@@ -45,10 +45,11 @@ function findGruppeBySpielerMail(spielerMail, userMail, userPasswort){
     const Http = new XMLHttpRequest();
     const url='http://localhost:8080/gruppen/' + spielerMail;
     console.log(url);
-    Http.open("GET", url);
+    Http.open("GET", url, false);
     Http.setRequestHeader("Authorization", "Basic " + btoa(userMail+ ":"+ userPasswort));
     Http.send();
-    Http.onreadystatechange=(e)=>{
+    
+    if (Http.status == 200) {
         var gruppe = JSON.parse(Http.responseText);
         console.log(
             "BackendAdapter Methode findGruppeBySpielerMail wurde aufgerufen mit:" + "\n"
@@ -61,6 +62,7 @@ function findGruppeBySpielerMail(spielerMail, userMail, userPasswort){
         console.log(gruppe);
         return JSON.parse(Http.responseText);
     }
+    else return "exception";
 }
 /**
  * Diese Methode gibt einen Spieler anhand seiner Mailadresse als Objekt zurück

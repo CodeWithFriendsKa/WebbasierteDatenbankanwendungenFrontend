@@ -61,13 +61,13 @@
                     </div>
                     <div class="formular">
                         <form>
-                            <!--Variablen-->
+                            <!--Inputfelder-->
                             <br>
-                            <input class="field-label" type="text"  placeholder=" Email Adresse"/>
+                            <input class="field-label" type="text" placeholder=" Email Adresse" id="login-mail"/>
                             <span id="name-error"></span>
-                            <input class="field-label" type="password"  placeholder=" Passwort"/>
+                            <input class="field-label" type="password"  placeholder=" Passwort" id="login-passwort"/>
                             <span id="name-error2"></span>
-                                <button id="login-button"><a href="#spieler-ansicht">Login</a></button>
+                                <button onclick="makeLogin()" id="login-button">Login</button>
                         </form>
                     </div>
                 </div>
