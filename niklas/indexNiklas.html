@@ -15,6 +15,8 @@
     <script src="../tamino/app.js"></script>
     <script src="registrieren.js"></script>
     <script src="login.js"></script>
+    <script src="detailansicht.js"></script>
+    <script src="algoKonfig.js"></script>
 </head>
 <body>
 
@@ -45,10 +47,10 @@
                     <h1>Login</h1>
                     <div class="formular">
                         <form2>
-                            <input type="radio" id="trainerLogIn" name="Person" value="Trainer"/>
+                            <!--<input type="radio" id="trainerLogIn" name="Person" value="Trainer"/>
                             <label for="Trainer">Trainer</label>
                             <input type="radio" id="spielerLogIn" name="Person" value="Spieler"/>
-                            <label for="Spieler">Spieler</label><br>
+                            <label for="Spieler">Spieler</label><br>-->
                         </form2>
                         <form>
                             <br>
@@ -73,10 +75,10 @@
                     <form2>
                         <button class="back" onclick="location.reload()"><i class="fas fa-chevron-left"></i></button><br><br>
                         <!--Radio-Buttons-->
-                        <input type="radio" id="trainerRegistrierung" name="Person" value="Trainer"/>
+                        <!--<input type="radio" id="trainerRegistrierung" name="Person" value="Trainer"/>
                         <label for="Trainer">Trainer</label>
                         <input type="radio" id="spielerRegistrierung" name="Person" value="Spieler"/>
-                        <label for="Spieler">Spieler</label><br>
+                        <label for="Spieler">Spieler</label><br>-->
                     </form2>
                     <form>
                         <!--Variablen-->
@@ -124,8 +126,8 @@
             <div class="top">
                 <h1>Traineransicht</h1>
             </div>
-            <div class="box">
-                <a href="">Training 1</a>
+            <div class="box" id="boxDetail">
+                <a href="#detailansicht" onclick="detailansicht()">Training 1</a>
                 <p>15:30</p>
                 <hr>
                 <a href="">Training 2</a>
@@ -189,25 +191,10 @@
             <div class="top">
                 <h1>Algorithmus</h1>
             </div>
-            <button>Algorithmus konfigurieren</button><br><br>
+            <button onclick="algoKonfig(); return false">Algorithmus konfigurieren</button><br><br>
+            <div class="formular" id="konfigTabelle">
+            </div>
             <button>Algorithmus starten</button><br><br>
-            <table>
-                <tr>
-                    <th>Trainingsfeld:</th>
-                    <td><input type="text"  id="trainingField"/></td>
-                    <td><span id="trainingField-error"></span></td>
-                </tr>
-                <tr>
-                    <th>Trainingszeiten:</th>
-                    <td><input type="text"  id="trainingTimes"/></td>
-                    <td><span id="trainingTimes-error"></span></td>
-                </tr>
-                <tr>
-                    <th>Trainer:</th>
-                    <td><input type="text"  id="trainer"/></td>
-                    <td><span id="trainer-error"></span></td>
-                </tr>
-            </table>
         </div>
     </div>
 </div>
