@@ -145,8 +145,21 @@ function getTrainerByMail(trainerMail, userMail, userPasswort) {
 /**
  * Diese Methode erlaubt das Anlegen eines neuen Spielers
  */
-function postTrainerEntity() {
-    
+function postTrainerEntity(trainer) {
+    const Http = new XMLHttpRequest();
+    const url='http://localhost:8080/trainer';
+    console.log(url);
+    Http.open("POST", url);
+    Http.setRequestHeader('Content-type','application/json');
+    Http.send(JSON.stringify(trainer));
+    Http.onreadystatechange=(e)=>{
+        console.log(
+            "BackendAdapter Methode postSpieler wurde aufgerufen" + "\n"
+            + " Serialisiertes Objekt:"
+        );
+        console.log(trainer);
+        return JSON.parse(Http.responseText);
+    };
 }
 
 /***
