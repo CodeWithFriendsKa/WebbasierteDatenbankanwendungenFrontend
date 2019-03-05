@@ -9,8 +9,17 @@ function spielerAnsicht() {
     baueSpielerAnsicht();
 }
 function baueSpielerAnsicht() {
-    document.getElementById("sp-ansicht-platz").innerHTML =  localStorage.getItem("spielerGruppePlatz");
-    document.getElementById("sp-ansicht-uhrzeit").innerHTML = localStorage.getItem("spielerGruppeZeit");
-    document.getElementById("sp-ansicht-trainer").innerHTML = localStorage.getItem("spielerGruppeTrainer");
-    document.getElementById("sp-ansicht-mitspieler").innerHTML = localStorage.getItem("spielerGruppeSpielerListe");
+    if (localStorage.getItem("newSpielerRegistration") !== "true"){
+        document.getElementById("sp-ansicht-platz").innerHTML =  localStorage.getItem("spielerGruppePlatz");
+        document.getElementById("sp-ansicht-uhrzeit").innerHTML = localStorage.getItem("spielerGruppeZeit");
+        document.getElementById("sp-ansicht-trainer").innerHTML = localStorage.getItem("spielerGruppeTrainer");
+        document.getElementById("sp-ansicht-mitspieler").innerHTML = localStorage.getItem("spielerGruppeSpielerListe");
+    }
+    else {
+        let boxView = document.getElementById("sp-ansicht-box");
+        while (boxView.firstChild) {
+            boxView.removeChild(boxView.firstChild);
+        }
+        document.getElementById("sp-ansicht-h1").innerText = "Du bist noch keiner Gruppe zugeordnet, bitte trage deine Zeiten ein!"
+    }
 }

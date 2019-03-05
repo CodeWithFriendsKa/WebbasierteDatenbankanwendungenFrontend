@@ -1,4 +1,15 @@
-// Updates dynamic content based on the fragment identifier.
+/***
+ * Diese Datei beinhaltet die für das routing notwendigen Mehtoden
+ * Die Navigation innerhalb der single page application erfolgt mittels des location.hashs.
+ * Dabei handelt es sich um einen Wert der aus einem hashtag und einem beliebigen Namen zusammengesetz ist ( #test ).
+ * Dieser Wert ist immer eindeutig und kann als ganz normaler href = "#test" in einen Anker (<a>) eingebaut werden.
+ * Wenn mann dann aud den Anker klickt ändert sich der location.hash auf den wert #test.
+ * Die folgende Methode holt sich den aktuellen location.hash.
+ * 1) lautet der location.hash login, so wird die "baue den login"- Methode ausgerufen, welche sagt, welche Elemente sichtbar sind und welche nicht
+ * 2) lautet der location.hash registrieren, so wird die "baue die registrierung"- Methode ausgerufen, welche sagt, welche Elemente sichtbar sind und welche nicht
+ * 3) lautet der location.hash spieler-ansicht, so wird die "baue die spieler-ansicht"- Methode ausgerufen, welche sagt, welche Elemente sichtbar sind und welche nicht
+ * 4) lautet der location.hash logout, so wird die "baue den logout"- Methode ausgerufen, welche sagt, welche Elemente sichtbar sind und welche nicht
+ */
 function navigate(){
 
     // Get a reference to the "content" div.
@@ -20,18 +31,20 @@ function navigate(){
     }
 }
 
-// If no fragment identifier is provided,
+/***
+ * Per default ist der location.hash auf login gesetzt
+ */
 if(!location.hash) {
     // default to #home
-    location.hash = "#home";
+    location.hash = "#login";
 }
 
-// Navigate once to the initial hash value.
+/***
+ * Rufe die zuvor definierte router methode auf
+ */
 navigate();
 
-// Navigate whenever the fragment identifier value changes.
-window.addEventListener("hashchange", navigate)
-
-function changeFragmentId(){
-    location.hash = "#spieler-ansicht";
-}
+/***
+ * Rufe bei einem location.hash Wechsel die router methode auf
+ */
+window.addEventListener("hashchange", navigate);

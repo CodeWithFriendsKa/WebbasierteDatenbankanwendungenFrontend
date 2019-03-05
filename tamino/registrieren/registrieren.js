@@ -31,19 +31,22 @@ function makeRegistrieren() {
 }
 
 function registriereSpieler(){
-   if (validate() > 0){
+    console.log("validation result; " + validate());
+
+   if (validate()){
         console.log("tedsgs");
         let mail = document.getElementById("register-mail").value;
         let passwort = document.getElementById("register-passwort").value;
         postSpielerEntity(new Spieler(mail, passwort));
         localStorage.setItem("userMail", mail);
         localStorage.setItem("userPasswort", passwort);
+        localStorage.setItem("newSpielerRegistration", "true");
         location.hash = "#spieler-ansicht";
    }
 }
 
 function registriereTrainer(){
-    if (validate() >0){
+    if (validate()){
 
     }
 }
@@ -82,26 +85,26 @@ function validate() {
 
     let validationResults = [nameValidationResult, vornameValidationResult, mailValidationResult, passworValidationResult];
 
-    console.log(vorname);
-    console.log(name);
-    console.log(geburtsdatum);
-    console.log(mail);
-    console.log(passwort);
-    console.log(passwortWiederholen);
+    console.log("vorname"+ vorname);
+    console.log("name"+ name);
+    console.log("geburtsdatum"+ geburtsdatum);
+    console.log("mail"+ mail);
+    console.log("passwort"+ passwort);
+    console.log("passwort wiederholen"+ passwortWiederholen);
 
-    console.log(nameValidationResult);
-    console.log(vornameValidationResult);
-    console.log(mailValidationResult);
-    console.log(passworValidationResult);
+    console.log("vr name" + nameValidationResult);
+    console.log("vr vorname" + vornameValidationResult);
+    console.log("vr mail"+ mailValidationResult);
+    console.log("vr pwd:" + passworValidationResult);
 
-    let sucess = 0;
+    let validationResult = true;
 
     for (let i = 0; i < validationResults.length; i++){
         if (!validationResults[i]){
             errors[i].innerText = errorTexte[i];
-            sucess += 1;
+            validationResult = false;
         }
     }
-    console.log(sucess);
-    return sucess;
+    console.log(validationResult);
+    return validationResult;
 }
