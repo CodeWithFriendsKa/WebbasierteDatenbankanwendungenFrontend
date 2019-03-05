@@ -7,6 +7,8 @@ function login() {
     document.getElementById("content-login").className = "tab-pane fade in active";
     document.getElementById("content-registrieren").className = "tab-pane fade";
     document.getElementById("content-spieler-ansicht").className = "tab-pane fade";
+
+    sessionStorage.clear();
 }
 
 let loginTrainerChecked = false;
@@ -23,11 +25,11 @@ function makeLogin() {
     if (!checkEmpty()) {
         if (loginTrainerChecked === false) {
             let mail = document.getElementById("login-mail").value;
-            localStorage.setItem("userMail", mail);
+            sessionStorage.setItem("userMail", mail);
             console.log("Eingegebene Mail:" + mail);
 
             let passwort = document.getElementById("login-passwort").value;
-            localStorage.setItem("userPasswort", passwort);
+            sessionStorage.setItem("userPasswort", passwort);
             console.log("Eingegebenes Passwort:" + passwort);
 
             let gruppe = findGruppeBySpielerMail(mail,mail, passwort);
@@ -38,11 +40,12 @@ function makeLogin() {
             else {
                 let mitspieleler = "";
                 gruppe.spielerListe.forEach( s => mitspieleler += (s.mail + " ") );
-                localStorage.setItem("spielerGruppePlatz", gruppe.platz);
-                localStorage.setItem("spielerGruppeZeit", gruppe.zeit);
-                localStorage.setItem("spielerGruppeSpielerListe", mitspieleler);
-                localStorage.setItem("spielerGruppeTrainer", gruppe.trainer.mail);
+                sessionStorage.setItem("spielerGruppePlatz", gruppe.platz);
+                sessionStorage.setItem("spielerGruppeZeit", gruppe.zeit);
+                sessionStorage.setItem("spielerGruppeSpielerListe", mitspieleler);
+                sessionStorage.setItem("spielerGruppeTrainer", gruppe.trainer.mail);
                 document.getElementById("login-error").innerText = "";
+                sessionStorage.setItem("newSpielerRegistration", "false");
                 location.hash = "#spieler-ansicht";
             }
         }

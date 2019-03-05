@@ -9,12 +9,13 @@ function spielerAnsicht() {
     baueSpielerAnsicht();
 }
 function baueSpielerAnsicht() {
-    if (localStorage.getItem("newSpielerRegistration") !== "true"){
-        document.getElementById("sp-ansicht-platz").innerHTML =  localStorage.getItem("spielerGruppePlatz");
-        document.getElementById("sp-ansicht-uhrzeit").innerHTML = localStorage.getItem("spielerGruppeZeit");
-        document.getElementById("sp-ansicht-trainer").innerHTML = localStorage.getItem("spielerGruppeTrainer");
-        document.getElementById("sp-ansicht-mitspieler").innerHTML = localStorage.getItem("spielerGruppeSpielerListe");
+    if (sessionStorage.getItem("newSpielerRegistration") !== "true"){
+        document.getElementById("sp-ansicht-platz").innerHTML =  sessionStorage.getItem("spielerGruppePlatz");
+        document.getElementById("sp-ansicht-uhrzeit").innerHTML = sessionStorage.getItem("spielerGruppeZeit");
+        document.getElementById("sp-ansicht-trainer").innerHTML = sessionStorage.getItem("spielerGruppeTrainer");
+        document.getElementById("sp-ansicht-mitspieler").innerHTML = sessionStorage.getItem("spielerGruppeSpielerListe");
     }
+    //todo Wenn du das Element löschst und einen Text überschreibst, kehrt der alte Text beim erneuten login nicht mehr zurück, besser mit Sichtbarkeiten arbeiten!
     else {
         let boxView = document.getElementById("sp-ansicht-box");
         while (boxView.firstChild) {

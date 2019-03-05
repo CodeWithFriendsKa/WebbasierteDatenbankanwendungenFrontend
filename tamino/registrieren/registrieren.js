@@ -38,9 +38,9 @@ function registriereSpieler(){
         let mail = document.getElementById("register-mail").value;
         let passwort = document.getElementById("register-passwort").value;
         postSpielerEntity(new Spieler(mail, passwort));
-        localStorage.setItem("userMail", mail);
-        localStorage.setItem("userPasswort", passwort);
-        localStorage.setItem("newSpielerRegistration", "true");
+        sessionStorage.setItem("userMail", mail);
+        sessionStorage.setItem("userPasswort", passwort);
+        sessionStorage.setItem("newSpielerRegistration", "true");
         location.hash = "#spieler-ansicht";
    }
 }
