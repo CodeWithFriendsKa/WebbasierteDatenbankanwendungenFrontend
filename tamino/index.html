@@ -10,7 +10,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="index.css" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" />
-
     <script src="backendAdapter/backendAdapter.js"></script>
     <script src="login/login.js"></script>
     <script src="registrieren/registrieren.js"></script>
@@ -43,8 +42,9 @@
     </div>
 </nav>
 
-<!-- Startseite/ Login -->
+
 <div class="tab-content">
+    <!-- Startseite/ Login -->
     <div class="tab-pane fade in active" id="content-login">
         <main>
             <div class="container">
@@ -54,9 +54,9 @@
                         <form2>
                             <!--Radio-Buttons-->
                             <input class="radio-button" type="radio" id="login-trainer-radio-button" name="Person" value="Trainer"/>
-                            <label for="Trainer">Trainer</label>
+                            <label for="login-trainer-radio-button">Trainer</label>
                             <input class="radio-button" type="radio" id="login-spieler-radio-button" name="Person" value="Spieler"/>
-                            <label for="Spieler">Spieler</label><br>
+                            <label for="login-spieler-radio-button">Spieler</label><br>
                         </form2>
                     </div>
                     <div class="formular">
@@ -83,27 +83,30 @@
                 <div class="formular">
                     <form2>
                         <!--Radio-Buttons-->
-                        <input class="radio-button" type="radio" id="Trainer" name="Person" value="Trainer"/>
-                        <label for="Trainer">Trainer</label>
-                        <input class="radio-button" type="radio" id="Spieler" name="Person" value="Spieler"/>
-                        <label for="Spieler">Spieler</label><br>
+                        <input class="radio-button" type="radio" id="register-radio-button-trainer" name="Person" value="Trainer" onclick="checkRadioButtons()"/>
+                        <label for="register-radio-button-trainer">Trainer</label>
+                        <input class="radio-button" type="radio" id="register-radio-button-spieler" name="Person" value="Spieler" checked="checked" onclick="checkRadioButtons()"/>
+                        <label for="register-radio-button-trainer">Spieler</label><br>
                     </form2>
                     <form>
                         <!--Variablen-->
                         <br>
-                        <input class="field-label" type="text"  placeholder=" Vorname" id="spielerName"/>
-                        <span id="firstname-error"></span>
-                        <input class="field-label" type="text"  placeholder=" Nachname" id="spielerNachname"/>
-                        <span id="surename-error2"></span>
-                        <input class="field-label" type="date" value="1995-01-01" title="Geburtsdatum" id="spielerGeburtstag"/>
-                        <span id="date-error"></span>
-                        <input class="field-label" type="email"  placeholder=" E-Mail" id="spielerEmail"/>
-                        <span id="email-error"></span>
-                        <input class="field-label" type="text"  placeholder=" Passwort" id="spielerPasswort"/>
-                        <input class="field-label" type="text"  placeholder=" Passwort wiederholen" id="spielerPasswortWd"/>
-                        <input class="field-label" type="text"  placeholder=" Verifizierungcode *" id="spielerCode"/>
-                        <p class="information"> * für Trainer erforderlich </p><br>
-                        <button>Registrieren</button>
+                        <input class="field-label" type="text"  placeholder=" Vorname" id="register-vorname"/>
+                        <span id="register-vorname-error"></span>
+                        <input class="field-label" type="text"  placeholder=" Nachname" id="register-nachname"/>
+                        <span id="register-nachname-error"></span>
+                        <input class="field-label" type="date" value="1995-01-01" title="Geburtsdatum" id="register-geburtstag"/>
+                        <span id="register-geburtsdatum-error"></span>
+                        <input class="field-label" type="email"  placeholder=" E-Mail" id="register-mail"/>
+                        <span id="register-mail-error"></span>
+                        <input class="field-label" type="text"  placeholder=" Passwort" id="register-passwort"/>
+                        <span id="register-passwort-error"></span>
+                        <input class="field-label" type="text"  placeholder=" Passwort wiederholen" id="register-passwort-wiederholen"/>
+                        <span id="register-passwort-wiederholen-error"></span>
+                        <input class="field-label hidden" type="text"  placeholder=" Verifizierungcode *" id="register-trainer-code"/>
+                        <span id="register-verifizierungs-error"></span>
+                        <p class="information hidden" id="register-trainer-code-hinweis"> * für Trainer erforderlich </p><br>
+                        <button id="register-button" onclick="makeRegistrieren()">Registrieren</button>
                     </form>
                 </div>
             </div>

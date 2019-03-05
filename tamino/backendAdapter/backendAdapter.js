@@ -102,17 +102,17 @@ function postSpielerEntity(spieler) {
     const Http = new XMLHttpRequest();
     const url='http://localhost:8080/spieler';
     console.log(url);
-    Http.open("POST", url);
+    Http.open("POST", url, false);
     Http.setRequestHeader('Content-type','application/json');
     Http.send(JSON.stringify(spieler));
-    Http.onreadystatechange=(e)=>{
+
+    if (Http.status == 200){
         console.log(
             "BackendAdapter Methode postSpieler wurde aufgerufen" + "\n"
             + " Serialisiertes Objekt:"
         );
         console.log(spieler);
-        return JSON.parse(Http.responseText);
-    };
+    }
 }
 /**
  * Diese Methode gibt einen Trainer anhand seiner Mailadresse als Objekt zurück
