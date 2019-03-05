@@ -1,3 +1,7 @@
+/***
+ * todo Methoden kommentieren, Logging einbauen
+ */
+
 function login() {
     document.getElementById("tab-login").className = "nav-link active";
     document.getElementById("tab-registrieren").className = "nav-link";
@@ -21,7 +25,6 @@ function loginCheckRadioButtons() {
 }
 
 function makeLogin() {
-
     if (!checkEmpty()) {
         if (loginTrainerChecked === false) {
             let mail = document.getElementById("login-mail").value;
@@ -49,6 +52,7 @@ function makeLogin() {
                 location.hash = "#spieler-ansicht";
             }
         }
+        // todo login für den Trainer implementieren
         if (loginTrainerChecked === true) {
 
         }

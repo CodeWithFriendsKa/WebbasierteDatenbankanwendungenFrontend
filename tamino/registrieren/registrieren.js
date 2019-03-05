@@ -1,3 +1,7 @@
+/***
+ * todo Methoden kommentieren, Logging einbauen
+ */
+
 function registrieren() {
     document.getElementById("tab-login").className = "nav-link";
     document.getElementById("tab-registrieren").className = "nav-link active";
@@ -44,7 +48,7 @@ function registriereSpieler(){
         location.hash = "#spieler-ansicht";
    }
 }
-
+// todo Trainer registrieren Mehtode bauen gemäß der Spieler registrieren Methode
 function registriereTrainer(){
     if (validate()){
 
@@ -52,7 +56,6 @@ function registriereTrainer(){
 }
 
 function validate() {
-
     let nameError = document.getElementById("register-vorname-error");
     let vornameError = document.getElementById("register-nachname-error");
     let mailError = document.getElementById("register-mail-error");

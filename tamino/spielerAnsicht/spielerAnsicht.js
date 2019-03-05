@@ -15,7 +15,7 @@ function baueSpielerAnsicht() {
         document.getElementById("sp-ansicht-trainer").innerHTML = sessionStorage.getItem("spielerGruppeTrainer");
         document.getElementById("sp-ansicht-mitspieler").innerHTML = sessionStorage.getItem("spielerGruppeSpielerListe");
     }
-    //todo Wenn du das Element löschst und einen Text überschreibst, kehrt der alte Text beim erneuten login nicht mehr zurück, besser mit Sichtbarkeiten arbeiten!
+    //todo wenn du das Element löschst und einen Text überschreibst, kehrt der alte Text beim erneuten login nicht mehr zurück, besser mit Sichtbarkeiten arbeiten!
     else {
         let boxView = document.getElementById("sp-ansicht-box");
         while (boxView.firstChild) {
