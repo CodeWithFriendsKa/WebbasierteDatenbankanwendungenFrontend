@@ -42,7 +42,6 @@
     </div>
 </nav>
 
-
 <div class="tab-content">
     <!-- Startseite/ Login -->
     <div class="tab-pane fade in active" id="content-login">
@@ -53,9 +52,9 @@
                     <div class="formular">
                         <form2>
                             <!--Radio-Buttons-->
-                            <input class="radio-button" type="radio" id="login-trainer-radio-button" name="Person" value="Trainer"/>
+                            <input class="radio-button" type="radio" id="login-trainer-radio-button" name="login-person" value="Trainer" onclick="loginCheckRadioButtons()"/>
                             <label for="login-trainer-radio-button">Trainer</label>
-                            <input class="radio-button" type="radio" id="login-spieler-radio-button" name="Person" value="Spieler"/>
+                            <input class="radio-button" type="radio" id="login-spieler-radio-button" name="login-person" value="Spieler" checked="checked" onclick="loginCheckRadioButtons()"/>
                             <label for="login-spieler-radio-button">Spieler</label><br>
                         </form2>
                     </div>
@@ -64,10 +63,9 @@
                             <!--Inputfelder-->
                             <br>
                             <input class="field-label" type="text" placeholder=" Email Adresse" id="login-mail"/>
-                            <span id="name-error"></span>
                             <input class="field-label" type="password"  placeholder=" Passwort" id="login-passwort"/>
-                            <span id="name-error2"></span>
-                                <button onclick="makeLogin()" id="login-button">Login</button>
+                            <span id="login-error"></span>
+                            <button onclick="makeLogin()" id="login-button">Login</button>
                         </form>
                     </div>
                 </div>
@@ -83,9 +81,9 @@
                 <div class="formular">
                     <form2>
                         <!--Radio-Buttons-->
-                        <input class="radio-button" type="radio" id="register-radio-button-trainer" name="Person" value="Trainer" onclick="checkRadioButtons()"/>
+                        <input class="radio-button" type="radio" id="register-radio-button-trainer" name="register-person" value="Trainer" onclick="checkRadioButtons()"/>
                         <label for="register-radio-button-trainer">Trainer</label>
-                        <input class="radio-button" type="radio" id="register-radio-button-spieler" name="Person" value="Spieler" checked="checked" onclick="checkRadioButtons()"/>
+                        <input class="radio-button" type="radio" id="register-radio-button-spieler" name="register-person" value="Spieler" checked="checked" onclick="checkRadioButtons()"/>
                         <label for="register-radio-button-trainer">Spieler</label><br>
                     </form2>
                     <form>

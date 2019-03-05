@@ -9,16 +9,8 @@ function spielerAnsicht() {
     baueSpielerAnsicht();
 }
 function baueSpielerAnsicht() {
-    let gruppe = findGruppeBySpielerMail("max1.mustermann@dhbw.de","max1.mustermann@dhbw.de", "123");
-    //let gruppe = findGruppeBySpielerMail(localStorage.getItem("userMail"), localStorage.getItem("userMail"), localStorage.getItem("userPasswort"));
-    if (gruppe !== "exception"){
-        document.getElementById("sp-ansicht-platz").innerHTML = gruppe.platz;
-        document.getElementById("sp-ansicht-uhrzeit").innerHTML = gruppe.zeit;
-        document.getElementById("sp-ansicht-trainer").innerHTML = gruppe.trainer;
-        document.getElementById("sp-ansicht-mitspieler").innerHTML = gruppe.spielerListe;
-    }
-    /**
-     * todo
-     * exception handling
-     */
+    document.getElementById("sp-ansicht-platz").innerHTML =  localStorage.getItem("spielerGruppePlatz");
+    document.getElementById("sp-ansicht-uhrzeit").innerHTML = localStorage.getItem("spielerGruppeZeit");
+    document.getElementById("sp-ansicht-trainer").innerHTML = localStorage.getItem("spielerGruppeTrainer");
+    document.getElementById("sp-ansicht-mitspieler").innerHTML = localStorage.getItem("spielerGruppeSpielerListe");
 }
