@@ -14,6 +14,8 @@
     <script src="login/login.js"></script>
     <script src="registrieren/registrieren.js"></script>
     <script src="spielerAnsicht/spielerAnsicht.js"></script>
+    <script src="trainerAnsicht/trainerAnsicht.js"></script>
+    <script src="trainerAnsicht/gruppeDetailAnsicht.js"></script>
 </head>
 <body>
 <!--
@@ -45,6 +47,9 @@ Hinweise zur Beschreibung der Dateien:
             </li>
             <li class="nav-link hidden" id="tab-spieler-ansicht">
                 <a href="#spieler-ansicht">Spieler Ansicht</a>
+            </li>
+            <li class="nav-link hidden" id="tab-trainer-ansicht">
+                <a href="#trainer-ansicht">Spieler Ansicht</a>
             </li>
             <li class="nav-link hidden" id="tab-logout">
                 <a href="#logout">Logout</a>
@@ -137,6 +142,26 @@ Hinweise zur Beschreibung der Dateien:
             </div>
         </div>
     </div>
+
+    <!-- Traineransicht -->
+    <div class="tab-pane fade" id="content-trainer-ansicht">
+        <div class="container">
+            <div class="top">
+                <h1>Traineransicht</h1>
+            </div>
+            <div class="box" id="boxDetail">
+
+                <a href="#detailansicht">Gruppe 1</a>
+                <p>15:30</p>
+                <hr>
+
+                <a href="">Gruppe 2</a>
+                <p>20:30</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <!-- The JavaScript code for routing-->

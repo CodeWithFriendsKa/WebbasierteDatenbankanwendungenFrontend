@@ -29,6 +29,12 @@ function navigate(){
     if (fragmentId === "logout"){
         login();
     }
+    if (fragmentId === "trainer-ansicht"){
+        trainerAnsicht();
+    }
+    if (fragmentId === "gruppe-detail-ansicht"){
+        gruppeDetailAnsicht();
+    }
 }
 
 /***

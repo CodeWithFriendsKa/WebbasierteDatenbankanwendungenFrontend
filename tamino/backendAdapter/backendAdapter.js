@@ -16,10 +16,11 @@
 function findAllGruppen(userMail, userPasswort) {
     const Http = new XMLHttpRequest();
     const url='http://localhost:8080/gruppen';
-    Http.open("GET", url);
+    Http.open("GET", url, false);
     Http.setRequestHeader("Authorization", "Basic " + btoa(userMail+ ":"+ userPasswort));
     Http.send();
-    Http.onreadystatechange=(e)=>{
+
+    if (Http.status == 200){
         var gruppenListe = JSON.parse(Http.responseText);
         console.log(
             "BackendAdapter Methode findAllGruppen wurde aufgerufen mit:" + "\n"
@@ -31,6 +32,7 @@ function findAllGruppen(userMail, userPasswort) {
         gruppenListe.forEach(gruppe => console.log(gruppe));
         return JSON.parse(Http.responseText);
     }
+    else return "exception";
 }
 /**
  * Diese Methode gibt eine Gruppe anhand der Mailadresse eines Spielers als Objekt zurück
@@ -147,21 +149,21 @@ function getTrainerByMail(trainerMail, userMail, userPasswort) {
 /**
  * Diese Methode erlaubt das Anlegen eines neuen Spielers
  */
-function postTrainerEntity(trainer) {
+function postTrainerEntity(trainer, code) {
     const Http = new XMLHttpRequest();
-    const url='http://localhost:8080/trainer';
+    const url='http://localhost:8080/trainer/' + code;
     console.log(url);
-    Http.open("POST", url);
+    Http.open("POST", url, false);
     Http.setRequestHeader('Content-type','application/json');
     Http.send(JSON.stringify(trainer));
-    Http.onreadystatechange=(e)=>{
+
+    if (Http.status == 200){
         console.log(
             "BackendAdapter Methode postSpieler wurde aufgerufen" + "\n"
             + " Serialisiertes Objekt:"
         );
         console.log(trainer);
-        return JSON.parse(Http.responseText);
-    };
+    }
 }
 
 /***

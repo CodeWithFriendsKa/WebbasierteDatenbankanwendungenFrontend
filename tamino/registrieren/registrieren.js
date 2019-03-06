@@ -4,12 +4,16 @@
 
 function registrieren() {
     document.getElementById("tab-login").className = "nav-link";
+    document.getElementById("tab-logout").className = "nav-link hidden";
     document.getElementById("tab-registrieren").className = "nav-link active";
     document.getElementById("tab-spieler-ansicht").className = "nav-link hidden";
+    document.getElementById("tab-trainer-ansicht").className = "nav-link hidden";
+
 
     document.getElementById("content-login").className = "tab-pane fade";
     document.getElementById("content-registrieren").className = "tab-pane fade in active";
     document.getElementById("content-spieler-ansicht").className = "tab-pane fade";
+    document.getElementById("content-trainer-ansicht").className = "tab-pane fade";
 }
 
 let trainerChecked = false;
@@ -38,7 +42,6 @@ function registriereSpieler(){
     console.log("validation result; " + validate());
 
    if (validate()){
-        console.log("tedsgs");
         let mail = document.getElementById("register-mail").value;
         let passwort = document.getElementById("register-passwort").value;
         postSpielerEntity(new Spieler(mail, passwort));
@@ -48,10 +51,15 @@ function registriereSpieler(){
         location.hash = "#spieler-ansicht";
    }
 }
-// todo Trainer registrieren Mehtode bauen gemäß der Spieler registrieren Methode
 function registriereTrainer(){
     if (validate()){
-
+        let mail = document.getElementById("register-mail").value;
+        let passwort = document.getElementById("register-passwort").value;
+        let code = document.getElementById("register-trainer-code").value;
+        postTrainerEntity(new Trainer(mail, passwort), code);
+        sessionStorage.setItem("userMail", mail);
+        sessionStorage.setItem("userPasswort", passwort);
+        location.hash = "#trainer-ansicht";
     }
 }
 
