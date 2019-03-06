@@ -1,3 +1,7 @@
+/***
+ * todo Methoden kommentieren, Logging einbauen
+ */
+
 function spielerAnsicht() {
     document.getElementById("tab-login").className = "nav-link hidden";
     document.getElementById("tab-logout").className = "nav-link";

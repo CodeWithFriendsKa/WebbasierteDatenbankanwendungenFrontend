@@ -19,14 +19,13 @@ function login() {
     document.getElementById("tab-spieler-ansicht").className = "nav-link hidden";
     document.getElementById("tab-trainer-ansicht").className = "nav-link hidden";
 
-
-
     document.getElementById("content-login").className = "tab-pane fade in active";
     document.getElementById("content-registrieren").className = "tab-pane fade";
     document.getElementById("content-spieler-ansicht").className = "tab-pane fade";
     document.getElementById("content-trainer-ansicht").className = "tab-pane fade";
 
     sessionStorage.clear();
+    console.log("setze Sichtbarkeiten für den login");
 }
 
 /***
@@ -40,7 +39,10 @@ function loginCheckRadioButtons() {
     if (document.getElementById("login-trainer-radio-button").checked){
         loginTrainerChecked = true;
     }
-    else loginTrainerChecked = false;
+    else {
+        loginTrainerChecked = false;
+    }
+    console.log("loginTrainerChecked = " + loginTrainerChecked);
 }
 
 /***
@@ -122,10 +124,12 @@ function checkEmpty() {
     let loginPasswort = document.getElementById("login-passwort").value;
     if ((loginMail === "" || loginPasswort === "")){
         document.getElementById("login-error").innerText = "Mail oder Passwort leer";
+        console.log("Mail oder Passwort leer");
         return true;
     }
     else {
         document.getElementById("login-error").innerText = "";
+        console.log("Mail oder Passwort befüllt");
         return false;
     }
 }

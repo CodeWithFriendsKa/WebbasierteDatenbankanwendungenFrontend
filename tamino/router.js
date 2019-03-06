@@ -16,6 +16,7 @@ function navigate(){
     // Isolate the fragment identifier using substr.
     // This gets rid of the "#" character.
     var fragmentId = location.hash.substr(1);
+    console.log("location.hash wurde geändert auf: " + fragmentId);
 
     if (fragmentId === "login"){
         login();
@@ -35,14 +36,6 @@ function navigate(){
     if (fragmentId === "gruppe-detail-ansicht"){
         gruppeDetailAnsicht();
     }
-}
-
-/***
- * Per default ist der location.hash auf login gesetzt
- */
-if(!location.hash) {
-    // default to #home
-    location.hash = "#login";
 }
 
 /***

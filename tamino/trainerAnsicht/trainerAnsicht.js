@@ -1,3 +1,6 @@
+/***
+ * todo Methoden kommentieren, Logging einbauen
+ */
 function trainerAnsicht() {
     document.getElementById("tab-login").className = "nav-link hidden";
     document.getElementById("tab-logout").className = "nav-link";

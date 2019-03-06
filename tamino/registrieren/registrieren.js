@@ -14,6 +14,8 @@ function registrieren() {
     document.getElementById("content-registrieren").className = "tab-pane fade in active";
     document.getElementById("content-spieler-ansicht").className = "tab-pane fade";
     document.getElementById("content-trainer-ansicht").className = "tab-pane fade";
+
+    console.log("setzte Sichtbarkeiten für die Registrierung");
 }
 
 let trainerChecked = false;
@@ -29,6 +31,7 @@ function checkRadioButtons() {
         document.getElementById("register-trainer-code").className = "field-label hidden";
         document.getElementById("register-trainer-code-hinweis").className = "information hidden";
     }
+    console.log("loginTrainerChecked = " + loginTrainerChecked);
 }
 
 function makeRegistrieren() {
@@ -39,8 +42,6 @@ function makeRegistrieren() {
 }
 
 function registriereSpieler(){
-    console.log("validation result; " + validate());
-
    if (validate()){
         let mail = document.getElementById("register-mail").value;
         let passwort = document.getElementById("register-passwort").value;
