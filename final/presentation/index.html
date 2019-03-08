@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Group Guide</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="index.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" />
+    <script src="../dataAndServiceAccess/storageService.js"></script>
+    <script src="../dataAndServiceAccess/backendAdapter.js"></script>
+    <script src="../uiLogic/login.js"></script>
+    <script src="../uiLogic/registrieren.js"></script>
+    <script src="../uiLogic/spielerAnsicht.js"></script>
+    <script src="../uiLogic/trainerAnsicht.js"></script>
+    <script src="../uiLogic/gruppeDetailAnsicht.js"></script>
+</head>
+<body>
+<!--
+todo siehe die nachfolgende Beschreibung
+Der Body der single page application enthält alle möglichen sichtbaren Elemente die in vorfeld statisch definiert werden können.
+Über die methoden login(), registrieren()... wird die Sichtbarkeit der Elemente geregelt.
+
+Hinweise zu Namenskonventionen:
+- HTML id's klein geschrieben:  (name des Bereiches)-(typ-des-Elementes)-(Beschreibung) -> Bsp: login-radio-button-trainer
+- JavaScript Variablen: wie in Java -> Bsp: localDateTime
+
+Hinweise zur Beschreibung der Dateien:
+- Als gute Praxis fürs Studium hat sich bewährt alles so genau wie möglich zu beschreiben (Nicht an Worten sparen)
+
+Hinweise englisch/deutsch
+- Der content, also der Inhalt welcher dem User angezeigt wird: deutsch
+- Logging auf der console: deutsch
+- Kommentare: deutsch
+- id's englisch
+- Variablen: englisch
+- names: englisch
+- Funktionen: englisch
+- Klassen: englisch
+-->
+<nav id="navigation">
+    <div class="toggle">
+        <i class="fas fa-bars bar" ></i>
+    </div>
+    <div class="container">
+        <ul class="nav nav-pills nav-justified">
+            <li class="nav-link">
+                <img id="icon" border="0" alt="Group Guide" src="../../Bilder/icon.png" height="91" width="95"/>
+            </li>
+            <li class="nav-link active" id="tab-login">
+                <a href="#login">Login</a>
+            </li>
+            <li class="nav-link" id="tab-registrieren">
+                <a href="#registrieren">Registrieren</a>
+            </li>
+            <li class="nav-link hidden" id="tab-spieler-ansicht">
+                <a href="#spieler-ansicht">Spieler Ansicht</a>
+            </li>
+            <li class="nav-link hidden" id="tab-trainer-ansicht">
+                <a href="#trainer-ansicht">Spieler Ansicht</a>
+            </li>
+            <li class="nav-link hidden" id="tab-logout">
+                <a href="#logout">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="tab-content">
+    <!-- Startseite/ Login -->
+    <div class="tab-pane fade in active" id="content-login">
+        <main>
+            <div class="container">
+                <div class="top">
+                    <h2 class="ue">Login</h2>
+                    <div class="formular">
+                        <form2>
+                            <!--Radio-Buttons-->
+                            <input class="radio-button" type="radio" id="login-trainer-radio-button" name="login-person" value="Trainer" onclick="loginCheckRadioButtons()"/>
+                            <label for="login-trainer-radio-button">Trainer</label>
+                            <input class="radio-button" type="radio" id="login-spieler-radio-button" name="login-person" value="Spieler" checked="checked" onclick="loginCheckRadioButtons()"/>
+                            <label for="login-spieler-radio-button">Spieler</label><br>
+                        </form2>
+                    </div>
+                    <div class="formular">
+                        <form>
+                            <!--Inputfelder-->
+                            <br>
+                            <input class="field-label" type="text" placeholder=" Email Adresse" id="login-mail"/>
+                            <input class="field-label" type="password"  placeholder=" Passwort" id="login-passwort"/>
+                            <span id="login-error"></span>
+                            <button onclick="makeLogin()" id="login-button">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Registrieren -->
+    <div class="tab-pane fade" id="content-registrieren">
+        <div class="container">
+            <div class="top">
+                <h2 class="ue">Registrieren</h2>
+                <div class="formular">
+                    <form2>
+                        <!--Radio-Buttons-->
+                        <input class="radio-button" type="radio" id="register-radio-button-trainer" name="register-person" value="Trainer" onclick="checkRadioButtons()"/>
+                        <label for="register-radio-button-trainer">Trainer</label>
+                        <input class="radio-button" type="radio" id="register-radio-button-spieler" name="register-person" value="Spieler" checked="checked" onclick="checkRadioButtons()"/>
+                        <label for="register-radio-button-trainer">Spieler</label><br>
+                    </form2>
+                    <form>
+                        <!--Variablen-->
+                        <br>
+                        <input class="field-label" type="text"  placeholder=" Vorname" id="register-vorname"/>
+                        <span id="register-vorname-error"></span>
+                        <input class="field-label" type="text"  placeholder=" Nachname" id="register-nachname"/>
+                        <span id="register-nachname-error"></span>
+                        <input class="field-label" type="date" value="1995-01-01" title="Geburtsdatum" id="register-geburtstag"/>
+                        <span id="register-geburtsdatum-error"></span>
+                        <input class="field-label" type="email"  placeholder=" E-Mail" id="register-mail"/>
+                        <span id="register-mail-error"></span>
+                        <input class="field-label" type="text"  placeholder=" Passwort" id="register-passwort"/>
+                        <span id="register-passwort-error"></span>
+                        <input class="field-label" type="text"  placeholder=" Passwort wiederholen" id="register-passwort-wiederholen"/>
+                        <span id="register-passwort-wiederholen-error"></span>
+                        <input class="field-label hidden" type="text"  placeholder=" Verifizierungcode *" id="register-trainer-code"/>
+                        <span id="register-verifizierungs-error"></span>
+                        <p class="information hidden" id="register-trainer-code-hinweis"> * für Trainer erforderlich </p><br>
+                        <button id="register-button" onclick="makeRegistrieren()">Registrieren</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spieleransicht -->
+    <div class="tab-pane fade" id="content-spieler-ansicht">
+        <div class="container">
+            <div class="top">
+                <h1 id="sp-ansicht-h1">Spieleransicht</h1>
+            </div>
+            <div class="box" id="sp-ansicht-box">
+                <b>Training</b><br><br>
+                <p>Platz:</p> <label id="sp-ansicht-platz"></label>
+                <p>Uhrzeit:</p> <label id="sp-ansicht-uhrzeit"></label>
+                <p>Trainer:</p> <label id="sp-ansicht-trainer"></label>
+                <p>Mitspieler:</p> <label id="sp-ansicht-mitspieler"></label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Traineransicht -->
+    <div class="tab-pane fade" id="content-trainer-ansicht">
+        <div class="container">
+            <div class="top">
+                <h1>Traineransicht</h1>
+            </div>
+            <div class="box" id="boxDetail">
+
+                <a href="#detailansicht">Gruppe 1</a>
+                <p>15:30</p>
+                <hr>
+
+                <a href="">Gruppe 2</a>
+                <p>20:30</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- The JavaScript code for routing-->
+<script src="../uiLogic/router.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+////
+todo:
+- kurze Beschreibung der single page application
+- page workflow einfügen
+////
+
+PAGE WORKFLOW:
+
+(Bild einfügen)
