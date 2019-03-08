@@ -78,21 +78,26 @@ function makeLogin() {
             sessionStorageSetpieler("spieler", spieler);
             console.log(spieler.mail);
 
-            let gruppe = findGruppeBySpielerMail(spieler.mail, spieler.mail, spieler.passwort);
-
-            if (gruppe === "exception"){
-                document.getElementById("login-error").innerText = "Mail oder Passwort falsch!";
-            }
-            else if (gruppe === "gruppe not found"){
-                document.getElementById("login-error").innerText = "";
-                sessionStorage.setItem("gruppe-not-found", "true");
-                location.hash = "#spieler-ansicht";
-            }
-            else {
+            try {
+                let gruppe = findGruppeBySpielerMail(spieler.mail, spieler.mail, spieler.passwort);
                 sessionStorageSetGruppe("gruppe", gruppe);
                 document.getElementById("login-error").innerText = "";
                 sessionStorage.setItem("new-spieler-registration", "false");
                 location.hash = "#spieler-ansicht";
+            }
+            catch (e) {
+                console.log(e);
+                if (e instanceof GruppeNotFoundException){
+                    document.getElementById("login-error").innerText = "";
+                    sessionStorage.setItem("gruppe-not-found", "true");
+                    location.hash = "#spieler-ansicht";
+                }
+                else if (e instanceof AuthorizationException){
+                    document.getElementById("login-error").innerText = "Mail oder Passwort falsch!";
+                }
+                else {
+                    document.getElementById("login-error").innerText = e.toString();
+                }
             }
         }
         if (loginTrainerChecked === true) {

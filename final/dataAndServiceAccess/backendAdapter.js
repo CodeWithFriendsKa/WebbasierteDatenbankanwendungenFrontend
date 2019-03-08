@@ -65,9 +65,12 @@ function findGruppeBySpielerMail(spielerMail, userMail, userPasswort){
         return JSON.parse(Http.responseText);
     }
     else if (Http.status == 404){
-        return "gruppe not found"
+        throw new GruppeNotFoundException("gruppe not found");
     }
-    else return "exception";
+    else if (Http.status == 403){
+        throw new AuthorizationException("Du bist nicht berechtigt diese Gruppe zu holen");
+    }
+    else throw new BadRequestException("clientseitiger Fehler");
 }
 /**
  * Diese Methode gibt einen Spieler anhand seiner Mailadresse als Objekt zurück
@@ -102,6 +105,9 @@ function getSpielerByMail(spielerMail, userMail, userPasswort) {
 
 /**
  * Diese Methode erlaubt das Anlegen eines neuen Sielers
+ * Es wird 1 Parameter benötigt:
+ * 1) Objektinstanz eines Spielers
+ * Hinweis zur Authorisierung: Jeder darf sich als Spieler anmelden
  */
 function postSpielerEntity(spieler) {
     const Http = new XMLHttpRequest();
@@ -151,6 +157,10 @@ function getTrainerByMail(trainerMail, userMail, userPasswort) {
 }
 /**
  * Diese Methode erlaubt das Anlegen eines neuen Spielers
+ * Es wird 2 Parameter benötigt:
+ * 1) Objektinstanz eines Trainers
+ * 2) Verifizierungscode für einen Trainer
+ * Hinweis zur Authorisierung: Nur mit Code ist eine Anmeldung möglich
  */
 function postTrainerEntity(trainer, code) {
     const Http = new XMLHttpRequest();
@@ -166,5 +176,8 @@ function postTrainerEntity(trainer, code) {
             + " Serialisiertes Objekt:"
         );
         console.log(trainer);
+    }
+    else {
+        return "exception";
     }
 }
