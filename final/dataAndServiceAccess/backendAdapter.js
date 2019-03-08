@@ -21,7 +21,8 @@ function findAllGruppen(userMail, userPasswort) {
     Http.send();
 
     if (Http.status == 200){
-        var gruppenListe = JSON.parse(Http.responseText);
+        let gruppenListe = JSON.parse(Http.responseText);
+        console.log("dsdffwf" + JSON.stringify(gruppenListe[0]));
         console.log(
             "BackendAdapter Methode findAllGruppen wurde aufgerufen mit:" + "\n"
             + " userMail:" + userMail + "\n"
@@ -30,9 +31,15 @@ function findAllGruppen(userMail, userPasswort) {
             + " Deserialisiertes Objekt:"
         );
         gruppenListe.forEach(gruppe => console.log(gruppe));
-        return JSON.parse(Http.responseText);
+        let liste = [];
+        gruppenListe.forEach(gruppe => liste.push(Gruppe.fromJson(JSON.stringify(gruppe))));
+        liste.forEach(l => console.log("test test tst"+ l.toString()));
+        return liste;
     }
-    else return "exception";
+    else if (Http.status == 403){
+        throw new AuthorizationException("Du bist nicht berechtigt alle Gruppen zu holen");
+    }
+    else throw new BadRequestException("clientseitiger Fehler");
 }
 /**
  * Diese Methode gibt eine Gruppe anhand der Mailadresse eines Spielers als Objekt zurück
@@ -62,7 +69,7 @@ function findGruppeBySpielerMail(spielerMail, userMail, userPasswort){
             + " Deserialisiertes Objekt:"
         );
         console.log(gruppe);
-        return JSON.parse(Http.responseText);
+        return gruppe;
     }
     else if (Http.status == 404){
         throw new GruppeNotFoundException("gruppe not found");

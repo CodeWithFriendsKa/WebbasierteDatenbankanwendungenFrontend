@@ -46,6 +46,17 @@ function sessionStorageSetGruppe(key, gruppe) {
     );
 }
 
+function sessionStorageSetAllGruppen(key, gruppen) {
+    let json = JSON.stringify(gruppen);
+    let string = "";
+    gruppen.forEach(g => string += g.toString());
+    console.log(
+        "Store gruppen in session storage." + "\n" +
+        "Object: " + string + "\n" +
+        "JSON: " + json
+    );
+}
+
 function sessionStorageGetGruppe(key) {
     let gruppe = Gruppe.fromJson(sessionStorage.getItem(key));
     console.log(

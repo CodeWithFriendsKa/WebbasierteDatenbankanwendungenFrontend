@@ -25,6 +25,7 @@ function login() {
     document.getElementById("content-trainer-ansicht").className = "tab-pane fade";
 
     sessionStorage.clear();
+    document.getElementById("login-error").innerText = "";
     console.log("setze Sichtbarkeiten für den login");
 }
 
@@ -65,19 +66,19 @@ function loginCheckRadioButtons() {
  */
 function makeLogin() {
     if (!checkEmpty()) {
+        let userMail = document.getElementById("login-mail").value;
+        let userPasswort = document.getElementById("login-passwort").value;
+        console.log(
+            "Eingegebene Login Daten:" + "\n" +
+            "Mail: " + userMail + "\n" +
+            "Passwort: " + userPasswort
+        );
         if (loginTrainerChecked === false) {
             let spieler = new Spieler(
-                document.getElementById("login-mail").value,
-                document.getElementById("login-passwort").value
-            );
-            console.log(
-                "Eingegebene Login Daten:" + "\n" +
-                "Mail: " + spieler.mail + "\n" +
-                "Passwort: " + spieler.passwort
+                userMail,
+                userPasswort
             );
             sessionStorageSetpieler("spieler", spieler);
-            console.log(spieler.mail);
-
             try {
                 let gruppe = findGruppeBySpielerMail(spieler.mail, spieler.mail, spieler.passwort);
                 sessionStorageSetGruppe("gruppe", gruppe);
@@ -101,21 +102,23 @@ function makeLogin() {
             }
         }
         if (loginTrainerChecked === true) {
-            let mail = document.getElementById("login-mail").value;
-            sessionStorage.setItem("userMail", mail);
-            console.log("Eingegebene Mail:" + mail);
-
-            let passwort = document.getElementById("login-passwort").value;
-            sessionStorage.setItem("userPasswort", passwort);
-            console.log("Eingegebenes Passwort:" + passwort);
-
-            let gruppen = findAllGruppen(mail, passwort);
-
-            if (gruppen === "exception"){
-                document.getElementById("login-error").innerText = "Mail oder Passwort falsch!";
-            }
-            else {
+            let trainer = new Trainer(
+                userMail,
+                userPasswort
+            );
+            sessionStorageSetTrainer("trainer", trainer);
+            try {
+                let gruppen = findAllGruppen(trainer.mail, trainer.passwort);
+                sessionStorageSetAllGruppen("all-gruppen", gruppen);
                 location.hash = "#trainer-ansicht";
+            }
+            catch (e) {
+                if (e instanceof AuthorizationException){
+                    document.getElementById("login-error").innerText = "Mail oder Passwort falsch!";
+                }
+                else {
+                    document.getElementById("login-error").innerText = e.toString();
+                }
             }
         }
     }
