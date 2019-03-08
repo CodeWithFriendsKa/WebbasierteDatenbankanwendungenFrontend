@@ -15,7 +15,7 @@ class Gruppe {
     }
 }
 /**
- * Methode für die Serialisierung
+ * Methode für die Deserialisierung
  */
 Gruppe.fromJson = function (json) {
     let obj = JSON.parse(json);

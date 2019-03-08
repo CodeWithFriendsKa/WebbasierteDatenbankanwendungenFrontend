@@ -11,7 +11,7 @@ class Trainer {
     }
 }
 /**
- * Methode für die Serialisierung
+ * Methode für die Deserialisierung
  */
 Trainer.fromJson = function (json) {
     let obj = JSON.parse(json);

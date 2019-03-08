@@ -11,7 +11,7 @@ class Spieler {
     }
 }
 /**
- * Methode für die Serialisierung
+ * Methode für die Deserialisierung
  */
 Spieler.fromJson = function (json) {
     let obj = JSON.parse(json);

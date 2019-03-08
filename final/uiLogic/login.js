@@ -56,7 +56,6 @@ function loginCheckRadioButtons() {
  *          - speichere im sessionStorrage, dass keine neue registrierung vorliegt
  *          - ändere den location.hash auf #spieler-ansicht
  *      - wenn nicht gebe eine Fehlermeldung aus
- *      todo:
  * Ist der radio button für den Trainer ausgewählt:
  *      - speichere die login Daten in variablen und speichere sie im sessionStorrage
  *      - versuche alle Gruppen über den Backendadapter zu holen
@@ -96,7 +95,6 @@ function makeLogin() {
                 location.hash = "#spieler-ansicht";
             }
         }
-        // todo login für den Trainer implementieren
         if (loginTrainerChecked === true) {
             let mail = document.getElementById("login-mail").value;
             sessionStorage.setItem("userMail", mail);
