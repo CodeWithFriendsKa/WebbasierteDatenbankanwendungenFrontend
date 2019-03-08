@@ -4,14 +4,21 @@
     <title>Group Guide</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--presentation-->
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="index.css" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" />
+    <!--data and service access-->
     <script src="../dataAndServiceAccess/storageService.js"></script>
     <script src="../dataAndServiceAccess/backendAdapter.js"></script>
+    <!--data model-->
+    <script src="../dataAndServiceAccess/dataModel/spieler.js"></script>
+    <script src="../dataAndServiceAccess/dataModel/trainer.js"></script>
+    <script src="../dataAndServiceAccess/dataModel/gruppe.js"></script>
+    <!--UI logic-->
     <script src="../uiLogic/login.js"></script>
     <script src="../uiLogic/registrieren.js"></script>
     <script src="../uiLogic/spielerAnsicht.js"></script>
@@ -48,7 +55,7 @@ Hinweise englisch/deutsch
     <div class="container">
         <ul class="nav nav-pills nav-justified">
             <li class="nav-link">
-                <img id="icon" border="0" alt="Group Guide" src="../../Bilder/icon.png" height="91" width="95"/>
+                <img id="icon" border="0" alt="Group Guide" src="icon.png" height="91" width="95"/>
             </li>
             <li class="nav-link active" id="tab-login">
                 <a href="#login">Login</a>
