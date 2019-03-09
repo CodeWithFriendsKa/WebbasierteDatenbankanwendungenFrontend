@@ -8,7 +8,6 @@ function trainerAnsicht() {
     document.getElementById("tab-spieler-ansicht").className = "nav-link hidden";
     document.getElementById("tab-trainer-ansicht").className = "nav-link active";
 
-
     document.getElementById("content-login").className = "tab-pane fade";
     document.getElementById("content-registrieren").className = "tab-pane fade";
     document.getElementById("content-spieler-ansicht").className = "tab-pane fade";
