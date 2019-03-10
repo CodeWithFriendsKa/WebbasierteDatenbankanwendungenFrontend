@@ -9,7 +9,6 @@ function registrieren() {
     document.getElementById("tab-spieler-ansicht").className = "nav-link hidden";
     document.getElementById("tab-trainer-ansicht").className = "nav-link hidden";
 
-
     document.getElementById("content-login").className = "tab-pane fade";
     document.getElementById("content-registrieren").className = "tab-pane fade in active";
     document.getElementById("content-spieler-ansicht").className = "tab-pane fade";
@@ -41,7 +40,7 @@ function makeRegistrieren() {
         case true : registriereTrainer();
     }
 }
-
+// todo
 function registriereSpieler(){
    if (validate()){
         let mail = document.getElementById("register-mail").value;
@@ -53,6 +52,7 @@ function registriereSpieler(){
         location.hash = "#spieler-ansicht";
    }
 }
+//todo
 function registriereTrainer(){
     if (validate()){
         let mail = document.getElementById("register-mail").value;

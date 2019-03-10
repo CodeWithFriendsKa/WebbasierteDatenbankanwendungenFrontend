@@ -131,6 +131,9 @@ function postSpielerEntity(spieler) {
         );
         console.log(spieler);
     }
+    else if (Http.status == 400){
+
+    }
 }
 /**
  * Diese Methode gibt einen Trainer anhand seiner Mailadresse als Objekt zurück
