@@ -49,6 +49,7 @@ function registriereSpieler(){
         sessionStorage.setItem("userMail", mail);
         sessionStorage.setItem("userPasswort", passwort);
         sessionStorage.setItem("new-spieler-registration", "true");
+        clearInputs();
         location.hash = "#spieler-ansicht";
    }
 }
@@ -61,6 +62,7 @@ function registriereTrainer(){
         postTrainerEntity(new Trainer(mail, passwort), code);
         sessionStorage.setItem("userMail", mail);
         sessionStorage.setItem("userPasswort", passwort);
+        clearInputs();
         location.hash = "#trainer-ansicht";
     }
 }
@@ -120,4 +122,12 @@ function validate() {
     }
     console.log(validationResult);
     return validationResult;
+}
+
+function clearInputs() {
+    console.log("clearInputs");
+    let inputs = document.getElementsByTagName("input");
+    for(let i = 0; i < inputs.length; i++) {
+        inputs[i].value = "";
+    }
 }
