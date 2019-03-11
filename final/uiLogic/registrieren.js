@@ -46,6 +46,7 @@ function registriereSpieler(){
         let mail = document.getElementById("register-mail").value;
         let passwort = document.getElementById("register-passwort").value;
         postSpielerEntity(new Spieler(mail, passwort));
+        clearInputs()
         sessionStorage.setItem("userMail", mail);
         sessionStorage.setItem("userPasswort", passwort);
         sessionStorage.setItem("new-spieler-registration", "true");
@@ -59,6 +60,7 @@ function registriereTrainer(){
         let passwort = document.getElementById("register-passwort").value;
         let code = document.getElementById("register-trainer-code").value;
         postTrainerEntity(new Trainer(mail, passwort), code);
+        clearInputs()
         sessionStorage.setItem("userMail", mail);
         sessionStorage.setItem("userPasswort", passwort);
         location.hash = "#trainer-ansicht";
@@ -120,4 +122,12 @@ function validate() {
     }
     console.log(validationResult);
     return validationResult;
+}
+
+function clearInputs() {
+    console.log("clearInputs");
+    let inputs = document.getElementsByTagName("input");
+    for(let i = 0; i < inputs.length; i++) {
+        inputs[i].value = "";
+    }
 }
