@@ -90,7 +90,7 @@ function makeLogin() {
                 console.log(e);
                 if (e instanceof GruppeNotFoundException){
                     document.getElementById("login-error").innerText = "";
-                    sessionStorage.setItem("gruppe-not-found", "true");
+                    sessionStorage.setItem("new-spieler-registration", "true");
                     location.hash = "#spieler-ansicht";
                 }
                 else if (e instanceof AuthorizationException){
