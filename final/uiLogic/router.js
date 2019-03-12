@@ -36,6 +36,10 @@ function navigate(){
     if (fragmentId === "gruppe-detail-ansicht"){
         gruppeDetailAnsicht();
     }
+/**
+    if (fragmentId === "test"){
+        test();
+    }**/
 }
 
 /***
