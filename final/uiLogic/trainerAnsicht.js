@@ -16,5 +16,5 @@ function trainerAnsicht() {
 }
 
 function baueTrainerAnsicht() {
-
+    sessionStorrageGetAllGruppen("all-gruppen");
 }

@@ -48,6 +48,7 @@ function sessionStorageSetGruppe(key, gruppe) {
 
 function sessionStorageSetAllGruppen(key, gruppen) {
     let json = JSON.stringify(gruppen);
+    sessionStorage.setItem(key, json);
     let string = "";
     gruppen.forEach(g => string += g.toString());
     console.log(
@@ -55,6 +56,16 @@ function sessionStorageSetAllGruppen(key, gruppen) {
         "Object: " + string + "\n" +
         "JSON: " + json
     );
+}
+
+function sessionStorrageGetAllGruppen(key) {
+    //let gruppen = [];
+    let g = sessionStorage.getItem(key);
+    console.log(g);
+    //forEach(gruppe => gruppen.push(Gruppe.fromJson(gruppe)));
+    //gruppen.forEach( g => console.log(g.toString()));
+
+    //return gruppen;
 }
 
 function sessionStorageGetGruppe(key) {
