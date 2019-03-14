@@ -27,6 +27,9 @@ function navigate(){
     if (fragmentId === "spieler-ansicht"){
         spielerAnsicht();
     }
+    if (fragmentId === "spieler-konfig"){
+        spielerKonfig();
+    }
     if (fragmentId === "logout"){
         login();
     }
