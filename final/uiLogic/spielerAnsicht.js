@@ -3,6 +3,8 @@
  */
 
 function spielerAnsicht() {
+    let boxView = document.getElementById("sp-ansicht-box").className = "box";
+
     document.getElementById("tab-login").className = "nav-link hidden";
     document.getElementById("tab-logout").className = "nav-link";
     document.getElementById("tab-registrieren").className = "nav-link hidden";
@@ -21,10 +23,7 @@ function spielerAnsicht() {
 function baueSpielerAnsicht() {
     if (sessionStorage.getItem("new-spieler-registration") === "true" || sessionStorage.getItem("gruppe not found") === "true"){
         console.log(sessionStorage.getItem("new-spieler-registration"));
-        let boxView = document.getElementById("sp-ansicht-box");
-        while (boxView.firstChild) {
-            boxView.removeChild(boxView.firstChild);
-        }
+        let boxView = document.getElementById("sp-ansicht-box").className = "box hidden";
         document.getElementById("sp-ansicht-h1").innerText = "Du bist noch keiner Gruppe zugeordnet, bitte trage deine Zeiten ein!";
 
     }
