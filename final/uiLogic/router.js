@@ -36,10 +36,9 @@ function navigate(){
     if (fragmentId === "gruppe-detail-ansicht"){
         gruppeDetailAnsicht();
     }
-/**
-    if (fragmentId === "test"){
-        test();
-    }**/
+    if (fragmentId === "trainer-konfig"){
+        trainerkonfig();
+    }
 }
 
 /***

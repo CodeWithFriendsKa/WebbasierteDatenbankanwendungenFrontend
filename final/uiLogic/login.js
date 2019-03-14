@@ -18,11 +18,13 @@ function login() {
     document.getElementById("tab-registrieren").className = "nav-link";
     document.getElementById("tab-spieler-ansicht").className = "nav-link hidden";
     document.getElementById("tab-trainer-ansicht").className = "nav-link hidden";
+    document.getElementById("tab-trainer-konfig").className = "nav-link hidden";
 
     document.getElementById("content-login").className = "tab-pane fade in active";
     document.getElementById("content-registrieren").className = "tab-pane fade";
     document.getElementById("content-spieler-ansicht").className = "tab-pane fade";
     document.getElementById("content-trainer-ansicht").className = "tab-pane fade";
+    document.getElementById("content-trainer-konfig").className = "tab-pane fade";
 
     sessionStorage.clear();
     document.getElementById("login-error").innerText = "";
