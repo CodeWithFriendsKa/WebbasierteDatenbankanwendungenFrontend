@@ -16,6 +16,8 @@ function registrieren() {
     document.getElementById("content-trainer-ansicht").className = "tab-pane fade";
     document.getElementById("content-trainer-konfig").className = "tab-pane fade";
     document.getElementById("content-spieler-konfig").className ="tab-pane fade fade";
+    document.getElementById("content-trainer-detailansicht").className = "tab-pane fade";
+    document.getElementById("content-spieler-ansicht-noch-keiner-gruppe-zugeordnet").className = "tab-pane fade";
 
 
     console.log("setzte Sichtbarkeiten für die Registrierung");
@@ -61,6 +63,8 @@ function registriereTrainer(mail, password){
     let trainer = new Trainer(mail, password);
     postTrainerEntity(trainer, code);
     sessionStorageSetTrainer("trainer", trainer);
+    let gruppen = findAllGruppen(trainer.mail, trainer.passwort);
+    sessionStorageSetAllGruppen("all-gruppen", gruppen);
     location.hash = "#trainer-ansicht";
 }
 function validate() {

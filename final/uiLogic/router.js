@@ -42,6 +42,9 @@ function navigate(){
     if (fragmentId === "trainer-konfig"){
         trainerkonfig();
     }
+    if (fragmentId.substring(0, fragmentId.length - 1) === "detailansicht"){
+        gruppeDetailAnsicht(fragmentId.substring(fragmentId.length - 1));
+    }
 }
 
 /***

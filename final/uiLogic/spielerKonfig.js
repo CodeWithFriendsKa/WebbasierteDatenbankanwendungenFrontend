@@ -13,4 +13,6 @@ function spielerKonfig() {
     document.getElementById("content-trainer-ansicht").className = "tab-pane fade";
     document.getElementById("content-trainer-konfig").className = "tab-pane fade";
     document.getElementById("content-spieler-konfig").className ="tab-pane fade in active";
+    document.getElementById("content-trainer-detailansicht").className = "tab-pane fade";
+    document.getElementById("content-spieler-ansicht-noch-keiner-gruppe-zugeordnet").className = "tab-pane fade";
 }

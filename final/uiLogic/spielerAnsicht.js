@@ -3,8 +3,6 @@
  */
 
 function spielerAnsicht() {
-    let boxView = document.getElementById("sp-ansicht-box").className = "box";
-
     document.getElementById("tab-login").className = "nav-link hidden";
     document.getElementById("tab-logout").className = "nav-link";
     document.getElementById("tab-registrieren").className = "nav-link hidden";
@@ -19,17 +17,16 @@ function spielerAnsicht() {
     document.getElementById("content-trainer-ansicht").className = "tab-pane fade";
     document.getElementById("content-trainer-konfig").className = "tab-pane fade";
     document.getElementById("content-spieler-konfig").className ="tab-pane fade";
+    document.getElementById("content-trainer-detailansicht").className = "tab-pane fade";
+    document.getElementById("content-spieler-ansicht-noch-keiner-gruppe-zugeordnet").className = "tab-pane fade";
 
     baueSpielerAnsicht();
 }
 function baueSpielerAnsicht() {
     if (sessionStorage.getItem("new-spieler-registration") === "true" || sessionStorage.getItem("gruppe not found") === "true"){
-        console.log(sessionStorage.getItem("new-spieler-registration"));
-        let boxView = document.getElementById("sp-ansicht-box").className = "box hidden";
-        document.getElementById("sp-ansicht-h1").innerText = "Du bist noch keiner Gruppe zugeordnet, bitte trage deine Zeiten ein!";
-
+        document.getElementById("content-spieler-ansicht").className = "tab-pane fade";
+        document.getElementById("content-spieler-ansicht-noch-keiner-gruppe-zugeordnet").className = "tab-pane fade in active";
     }
-    //todo wenn du das Element löschst und einen Text überschreibst, kehrt der alte Text beim erneuten login nicht mehr zurück, besser mit Sichtbarkeiten arbeiten!
     else {
         console.log(sessionStorage.getItem("new-spieler-registration"));
         let gruppe = sessionStorageGetGruppe("gruppe");

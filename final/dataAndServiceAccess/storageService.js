@@ -59,13 +59,18 @@ function sessionStorageSetAllGruppen(key, gruppen) {
 }
 
 function sessionStorrageGetAllGruppen(key) {
-    //let gruppen = [];
-    let g = sessionStorage.getItem(key);
-    console.log(g);
-    //forEach(gruppe => gruppen.push(Gruppe.fromJson(gruppe)));
-    //gruppen.forEach( g => console.log(g.toString()));
+    let gruppen = sessionStorage.getItem(key);
+    gruppen = JSON.parse(gruppen);
+    let g = [];
+    gruppen.forEach(x => g.push(Gruppe.fromJson(JSON.stringify(x))));
 
-    //return gruppen;
+    g.forEach( r => console.log( "test" + r.toString()));
+
+    console.log(
+        "get gruppen from storrage." + "\n" +
+        "Object: " + gruppen.toString()
+    );
+    return g;
 }
 
 function sessionStorageGetGruppe(key) {
