@@ -221,35 +221,24 @@ Hinweise englisch/deutsch
             <table>
                 <tr>
                     <th>Trainingsfeld:</th>
-                    <td>
-                        <input type="text"  id="trainingField"/>
-                    </td>
-                    <td>
-                        <span id=\"trainingField-error\"></span>
-                    </td>
+                    <td><input type="text"  id="trainerKonfigTrainingsfeld"/></td>
+                    <td><span id="trainerKonfigTrainingsfeld-error"></span></td>
                 </tr>
                 <tr>
                     <th>Trainingszeiten:</th>
-                    <td>
-                        <input type="text"  id="trainingTimes"/>
-                    </td>
-                    <td>
-                        <span id="trainingTimes-error"></span>
-                    </td>
+                    <td><input type="text"  id="trainerKonfigTrainingszeiten"/></td>
+                    <td><span id="trainerKonfigTrainingszeiten-error"></span></td>
                 </tr>
                 <tr>
                     <th>Trainer:</th>
-                    <td>
-                        <input type="text"  id="trainer"/>
-                    </td>
-                    <td>
-                        <span id="trainer-error"></span>
-                    </td>
+                    <td><input type="text"  id="trainerKonfigTrainer"/></td>
+                    <td><span id="trainerKonfigTrainer-error"></span></td>
                 </tr>
             </table><br><br>
             <div class="formular" id="konfigTabelle">
             </div>
-            <button>Algorithmus starten</button><br><br>
+            <button onclick="trainerKonfigSpeichern()">Speichern</button>
+            <button onclick="trainerKonfigAlgorithmus()">Algorithmus starten</button><br><br>
         </div>
     </div>
 
