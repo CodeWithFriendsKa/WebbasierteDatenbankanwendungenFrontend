@@ -104,7 +104,7 @@ li.suche:hover {
         display: block;
         cursor: pointer;
         background:#f1f1f3;
-        margin-bottom: none;
+        margin-bottom: auto;
     }
     ul {
         width: 100%;
@@ -149,5 +149,10 @@ li.suche:hover {
 
     #button1, #button2 {
         width: 40%;
+    }
+    table tr td span {
+        color: red;
+        font-size:0.8em;
+        /*funktioniert noch nicht*/
     }
 }

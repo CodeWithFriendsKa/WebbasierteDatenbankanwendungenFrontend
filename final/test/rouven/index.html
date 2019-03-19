@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Group Guide</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="index.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" />
+
+    <script src="../tamino/app.js"></script>
+</head>
+<body>
+<!--Navigation-->
+<nav id="navigation">
+
+    <div class="toggle">
+        <i class="fas fa-bars bar" ></i>
+    </div>
+    <div class="container">
+        <ul class="nav nav-pills nav-justified">
+            <li class="nav-link">
+                <img id="icon" border="0" alt="Group Guide" src="../Bilder/icon.png" height="91" width="95"/></li>
+            <li class="nav-link active">
+                <a data-toggle="tab" href="#login">Login</a></li>
+            <li class="nav-link">
+                <a data-toggle="tab" href="#registrieren">Registrieren</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Startseite/ Login -->
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="login">
+            <main>
+                <div class="container">
+                    <div class="top">
+                        <h2 class="ue">Login</h2>
+                        <div class="formular">
+                            <form>
+                                <!--Variablen-->
+                                <br>
+                                <input class="field-label" type="text"  placeholder=" Email Adresse"/>
+                                <span id="name-error"></span>
+                                <input class="field-label" type="password"  placeholder=" Passwort"/>
+                                <span id="name-error2"></span>
+                                <button id="button1" href="#login">login</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Registrieren -->
+        <div class="tab-pane fade" id="registrieren">
+            <div class="container">
+                <div class="top">
+                    <h2 class="ue">Registrieren</h2>
+                    <div class="formular">
+                        <form2>
+                            <!--Radio-Buttons-->
+                            <input class="radio-button" type="radio" id="Trainer" name="Person" value="Trainer"/>
+                            <label for="Trainer">Trainer</label>
+                            <input class="radio-button" type="radio" id="Spieler" name="Person" value="Spieler"/>
+                            <label for="Spieler">Spieler</label><br>
+                        </form2>
+                        <form>
+                            <!--Variablen-->
+                            <br>
+                            <input class="field-label" type="text"  placeholder=" Vorname" id="spielerName"/>
+                            <span id="firstname-error"></span>
+                            <input class="field-label" type="text"  placeholder=" Nachname" id="spielerNachname"/>
+                            <span id="surename-error2"></span>
+                            <input class="field-label" type="date" value="1995-01-01" title="Geburtsdatum" id="spielerGeburtstag"/>
+                            <span id="date-error"></span>
+                            <input class="field-label" type="email"  placeholder=" E-Mail" id="spielerEmail"/>
+                            <span id="email-error"></span>
+                            <input class="field-label" type="text"  placeholder=" Passwort" id="spielerPasswort"/>
+                            <input class="field-label" type="text"  placeholder=" Passwort wiederholen" id="spielerPasswortWd"/>
+                            <input class="field-label" type="text"  placeholder=" Verifizierungcode *" id="spielerCode"/>
+                            <p class="information"> * für Trainer erforderlich </p><br>
+                            <button id="button2" href="">Registrieren</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -27,6 +27,9 @@ function navigate(){
     if (fragmentId === "spieler-ansicht"){
         spielerAnsicht();
     }
+    if (fragmentId === "spieler-konfig"){
+        spielerKonfig();
+    }
     if (fragmentId === "logout"){
         login();
     }
@@ -35,6 +38,12 @@ function navigate(){
     }
     if (fragmentId === "gruppe-detail-ansicht"){
         gruppeDetailAnsicht();
+    }
+    if (fragmentId === "trainer-konfig"){
+        trainerkonfig();
+    }
+    if (fragmentId.substring(0, fragmentId.length - 1) === "detailansicht"){
+        gruppeDetailAnsicht(fragmentId.substring(fragmentId.length - 1));
     }
 }
 

@@ -27,8 +27,11 @@
 <script src="../uiLogic/login.js"></script>
 <script src="../uiLogic/registrieren.js"></script>
 <script src="../uiLogic/spielerAnsicht.js"></script>
+<script src="../uiLogic/spielerKonfig.js"></script>
 <script src="../uiLogic/trainerAnsicht.js"></script>
 <script src="../uiLogic/gruppeDetailAnsicht.js"></script>
+<script src="../uiLogic/trainerKonfig.js"></script>
+
 </head>
 <body>
 <!--
@@ -69,10 +72,16 @@ Hinweise englisch/deutsch
                 <a href="#registrieren">Registrieren</a>
             </li>
             <li class="nav-link hidden" id="tab-spieler-ansicht">
-                <a href="#spieler-ansicht">Spieler Ansicht</a>
+                <a href="#spieler-ansicht">Mein Profil</a>
+            </li>
+            <li class="nav-link hidden" id="tab-spieler-konfig">
+                <a href="#spieler-konfig">Konfiguration</a>
             </li>
             <li class="nav-link hidden" id="tab-trainer-ansicht">
-                <a href="#trainer-ansicht">Spieler Ansicht</a>
+                <a href="#trainer-ansicht">Mein Profil</a>
+            </li>
+            <li class="nav-link hidden" id="tab-trainer-konfig">
+                <a href="#trainer-konfig">Konfiguration</a>
             </li>
             <li class="nav-link hidden" id="tab-logout">
                 <a href="#logout">Logout</a>
@@ -154,7 +163,7 @@ Hinweise englisch/deutsch
     <div class="tab-pane fade" id="content-spieler-ansicht">
         <div class="container">
             <div class="top">
-                <h1 id="sp-ansicht-h1">Spieleransicht</h1>
+                <h1 id="sp-ansicht-h1">Trainingszeiten</h1>
             </div>
             <div class="box" id="sp-ansicht-box">
                 <b>Training</b><br><br>
@@ -166,24 +175,82 @@ Hinweise englisch/deutsch
         </div>
     </div>
 
+    <!-- Spieleransicht keiner Gruppe zugeordnet-->
+    <div class="tab-pane fade" id="content-spieler-ansicht-noch-keiner-gruppe-zugeordnet">
+        <div class="container">
+            <div class="top">
+                <h1 id="sp-ansicht-h1-noch-keiner-gruppe-zugeordnet">Du bist noch keiner Gruppe zugeordnet, bitte trage deine Zeiten ein!</h1>
+            </div>
+        </div>
+    </div>
+
     <!-- Traineransicht -->
     <div class="tab-pane fade" id="content-trainer-ansicht">
         <div class="container">
             <div class="top">
-                <h1>Traineransicht</h1>
+                <h1>Trainingszeiten</h1>
             </div>
             <div class="box" id="boxDetail">
 
-                <a href="#detailansicht">Gruppe 1</a>
-                <p>15:30</p>
-                <hr>
-
-                <a href="#detailansicht">Gruppe 2</a>
-                <p>20:30</p>
-                <hr>
             </div>
         </div>
     </div>
+
+    <!-- Trainer Detailansicht -->
+    <div class="tab-pane fade" id="content-trainer-detailansicht">
+        <div class="container">
+            <div class="top">
+                <h1>Trainingszeiten</h1>
+            </div>
+            <div class="box" id="trainer-detail-ansicht-box">
+                <b>Training</b><br><br>
+                <p>Platz:</p> <label id="trainer-detail-ansicht-platz"></label>
+                <p>Uhrzeit:</p> <label id="trainer-detail-ansicht-uhrzeit"></label>
+                <p>Trainer:</p> <label id="trainer-detail-ansicht-trainer"></label>
+                <p>Mitspieler:</p> <label id="trainer-detail-ansicht-mitspieler"></label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trainer Konfiguration-->
+    <div class="tab-pane fade" id="content-trainer-konfig">
+        <div class="container">
+            <div class="top">
+                <h1>Algorithmus</h1>
+            </div>
+            <table>
+                <tr>
+                    <th>Trainingsfeld:</th>
+                    <td><input type="text"  id="trainerKonfigTrainingsfeld"/></td>
+                    <td><span id="trainerKonfigTrainingsfeld-error"></span></td>
+                </tr>
+                <tr>
+                    <th>Trainingszeiten:</th>
+                    <td><input type="text"  id="trainerKonfigTrainingszeiten"/></td>
+                    <td><span id="trainerKonfigTrainingszeiten-error"></span></td>
+                </tr>
+                <tr>
+                    <th>Trainer:</th>
+                    <td><input type="text"  id="trainerKonfigTrainer"/></td>
+                    <td><span id="trainerKonfigTrainer-error"></span></td>
+                </tr>
+            </table><br><br>
+            <div class="formular" id="konfigTabelle">
+            </div>
+            <button onclick="trainerKonfigSpeichern()">Speichern</button>
+            <button onclick="trainerKonfigAlgorithmus()">Algorithmus starten</button><br><br>
+        </div>
+    </div>
+
+    <!-- Spieler Konfiguration-->
+    <div class="tab-pane fade" id="content-spieler-konfig">
+        <div class="container">
+            <div class="top">
+                <h1>Trainigszeiten festlegen</h1>
+            </div>
+        </div>
+    </div>
+
 
 </div>
 

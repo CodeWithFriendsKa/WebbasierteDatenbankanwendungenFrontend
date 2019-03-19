@@ -7,7 +7,8 @@ class Trainer {
         this.passwort = passwort;
     }
     toString(){
-        return "mail: " + this.mail + "\n" + "passwort: " + this.passwort;
+        //return "mail: " + this.mail + "\n" + "passwort: " + this.passwort;
+        return "mail: " + this.mail;
     }
 }
 /**
