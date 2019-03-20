@@ -16,3 +16,9 @@ function spielerKonfig() {
     document.getElementById("content-trainer-detailansicht").className = "tab-pane fade";
     document.getElementById("content-spieler-ansicht-noch-keiner-gruppe-zugeordnet").className = "tab-pane fade";
 }
+
+function setSpieletTrainingData(spieler, userMail, userPasswort) {
+    //ToDo: Lese alle gesetzten Checkboxen aus, speichern in Array
+    //ToDo: Spieler-Entity: TrainingsArray + Anzahl gewünschter Trainings hinzufügen
+    putSpielerEntity(spieler, userMail, userPasswort);
+}

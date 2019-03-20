@@ -135,6 +135,36 @@ function postSpielerEntity(spieler) {
 
     }
 }
+
+
+/**
+ * Diese Methode erlaubt es, die Trainingsdaten zu einem vorhandnenen Spieler zu übergeben
+ */
+
+function putTrainerEntity(spieler, userMail, userPasswort) {
+    const Http = new XMLHttpRequest();
+    const url='http://localhost:8080/spieler/';
+    console.log(url);
+    Http.open("PUT", url, false);
+    Http.setRequestHeader("Authorization", "Basic " + btoa(userMail+ ":"+ userPasswort));
+    Http.setRequestHeader('Content-type','application/json');
+    Http.send(JSON.stringify(spieler));
+
+    if (Http.status == 200){
+        console.log(
+            "BackendAdapter Methode putSpieler wurde aufgerufen" + "\n"
+            + " geädnertes Objekt:"
+        );
+        console.log(spieler);
+    }
+    else {
+        return "exception";
+    }
+}
+
+
+
+
 /**
  * Diese Methode gibt einen Trainer anhand seiner Mailadresse als Objekt zurück
  * Es werden 3 Parameter benötigt:
@@ -166,7 +196,7 @@ function getTrainerByMail(trainerMail, userMail, userPasswort) {
     }
 }
 /**
- * Diese Methode erlaubt das Anlegen eines neuen Spielers
+ * Diese Methode erlaubt das Anlegen eines neuen Trainers
  * Es wird 2 Parameter benötigt:
  * 1) Objektinstanz eines Trainers
  * 2) Verifizierungscode für einen Trainer
@@ -184,6 +214,31 @@ function postTrainerEntity(trainer, code) {
         console.log(
             "BackendAdapter Methode postSpieler wurde aufgerufen" + "\n"
             + " Serialisiertes Objekt:"
+        );
+        console.log(trainer);
+    }
+    else {
+        return "exception";
+    }
+}
+
+/**
+ * Diese Methode erlaubt es, die Trainingsdaten zu einem vorhandnenen Trainer zu übergeben
+ */
+
+function putTrainerEntity(trainer, userMail, userPasswort) {
+    const Http = new XMLHttpRequest();
+    const url='http://localhost:8080/trainer/';
+    console.log(url);
+    Http.open("PUT", url, false);
+    Http.setRequestHeader("Authorization", "Basic " + btoa(userMail+ ":"+ userPasswort));
+    Http.setRequestHeader('Content-type','application/json');
+    Http.send(JSON.stringify(trainer));
+
+    if (Http.status == 200){
+        console.log(
+            "BackendAdapter Methode putSpieler wurde aufgerufen" + "\n"
+            + " geädnertes Objekt:"
         );
         console.log(trainer);
     }
