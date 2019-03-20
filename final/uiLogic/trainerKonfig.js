@@ -14,41 +14,34 @@ function trainerkonfig() {
     document.getElementById("content-trainer-detailansicht").className = "tab-pane fade";
     document.getElementById("content-spieler-ansicht-noch-keiner-gruppe-zugeordnet").className = "tab-pane fade";
 
+    trainerKonfigKalender();
 }
 
-function trainerKonfigValidation(){
-    var trainingsfeld= document.querySelector("#trainerKonfigTrainingsfeld");
-    if (trainingsfeld.value == "" || isNaN(trainingsfeld.value)){
-        document.getElementById("trainerKonfigTrainingsfeld-error").innerHTML = "Bitte geben Sie die Feldnummern ein";
-        return false;
-    }
+function trainerKonfigKalender() {
+    var table = document.getElementById("trainerKonfigKalender");
+    var tr = table.insertRow(0);
+    var th1 = document.createElement("th");
+    var th2 = document.createElement("th");
+    var th3 = document.createElement("th");
+    var th4 = document.createElement("th");
+    var th5 = document.createElement("th");
+    var th6 = document.createElement("th");
+    var th7 = document.createElement("th");
 
-    else{
-        document.getElementById("trainerKonfigTrainingsfeld-error").innerHTML = "";
-    }
-    var trainingszeiten= document.querySelector("#trainerKonfigTrainingszeiten");
-    if (trainingszeiten.value == "" || isNaN(trainingszeiten.value)){
-        document.getElementById("trainerKonfigTrainingszeiten-error").innerHTML = "Bitte geben Sie die Trainingszeiten ein";
-        return false;
-    }
+    th1.innerHTML = "";
+    th2.innerHTML = "Montag";
+    th3.innerHTML = "Dienstag";
+    th4.innerHTML = "Mittwoch";
+    th5.innerHTML = "Donnerstag";
+    th6.innerHTML = "Freitag";
+    th7.innerHTML = "Samstag";
 
-    else{
-        document.getElementById("trainerKonfigTrainingszeiten-error").innerHTML = "";
-    }
-    var trainerName= document.querySelector("#trainerKonfigTrainer");
-    if (trainerName.value == "" || !isNaN(trainerName.value)) {
-        document.getElementById("trainerKonfigTrainer-error").innerHTML = "Bitte geben Sie die Namen aller Trainer ein";
-        return false;
-    }
-    else{
-        document.getElementById("trainerKonfigTrainer-error").innerHTML = "";
-    }
+    tr.appendChild( th1 );
+    tr.appendChild( th2 );
+    tr.appendChild( th3 );
+    tr.appendChild( th4 );
+    tr.appendChild( th5 );
+    tr.appendChild( th6 );
+    tr.appendChild( th7 );
 }
-function trainerKonfigSpeichern() {
-    //trainerKonfigValidation();
-    //muss noch fertig ausprogrammiert werden
-    confirm("Wollen Sie die Einträge speichern?");
-}
-function trainerKonfigAlgorithmus(){
-
-}
+    //disabled macht checkbox vergraut

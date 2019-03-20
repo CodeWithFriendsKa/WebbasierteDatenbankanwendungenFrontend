@@ -150,9 +150,12 @@ li.suche:hover {
     #button1, #button2 {
         width: 40%;
     }
-    table tr td span {
-        color: red;
-        font-size:0.8em;
-        /*funktioniert noch nicht*/
-    }
+}
+table, tr, th, td {
+    border: 1px solid black;
+    width: 500px;
+    text-align: center;
+}
+#trainerKonfigMinTrainingsanzahl{
+    width: 50px;
 }

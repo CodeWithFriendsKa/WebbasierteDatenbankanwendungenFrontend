@@ -218,27 +218,13 @@ Hinweise englisch/deutsch
             <div class="top">
                 <h1>Algorithmus</h1>
             </div>
-            <table>
-                <tr>
-                    <th>Trainingsfeld:</th>
-                    <td><input type="text"  id="trainerKonfigTrainingsfeld"/></td>
-                    <td><span id="trainerKonfigTrainingsfeld-error"></span></td>
-                </tr>
-                <tr>
-                    <th>Trainingszeiten:</th>
-                    <td><input type="text"  id="trainerKonfigTrainingszeiten"/></td>
-                    <td><span id="trainerKonfigTrainingszeiten-error"></span></td>
-                </tr>
-                <tr>
-                    <th>Trainer:</th>
-                    <td><input type="text"  id="trainerKonfigTrainer"/></td>
-                    <td><span id="trainerKonfigTrainer-error"></span></td>
-                </tr>
+            <table id="trainerKonfigKalender">
+                <!-- Tabelle wird in JS dynamisch erzeugt -->
             </table><br><br>
-            <div class="formular" id="konfigTabelle">
-            </div>
-            <button onclick="trainerKonfigSpeichern()">Speichern</button>
-            <button onclick="trainerKonfigAlgorithmus()">Algorithmus starten</button><br><br>
+            <p>minimale Trainingsanzahl: <input class="field-label" type="number" min="0" max="20" id="trainerKonfigMinTrainingsanzahl"/></p><br>
+            <button>Speichern</button>
+            <button>Kalender für Spieler freischalten</button>
+            <button>Algorithmus starten</button>
         </div>
     </div>
 
