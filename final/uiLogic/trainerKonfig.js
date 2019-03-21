@@ -18,30 +18,51 @@ function trainerkonfig() {
 }
 
 function trainerKonfigKalender() {
-    var table = document.getElementById("trainerKonfigKalender");
-    var tr = table.insertRow(0);
-    var th1 = document.createElement("th");
-    var th2 = document.createElement("th");
-    var th3 = document.createElement("th");
-    var th4 = document.createElement("th");
-    var th5 = document.createElement("th");
-    var th6 = document.createElement("th");
-    var th7 = document.createElement("th");
+    var reiheNr = 0;
+    var spalteNr = 0;
 
-    th1.innerHTML = "";
-    th2.innerHTML = "Montag";
-    th3.innerHTML = "Dienstag";
-    th4.innerHTML = "Mittwoch";
-    th5.innerHTML = "Donnerstag";
-    th6.innerHTML = "Freitag";
-    th7.innerHTML = "Samstag";
+    let addRow = (e) => {
+        reiheNr++;
+        let table = document.getElementById("trainerKonfigKalender");
+        let tr = table.insertRow( reiheNr );
 
-    tr.appendChild( th1 );
-    tr.appendChild( th2 );
-    tr.appendChild( th3 );
-    tr.appendChild( th4 );
-    tr.appendChild( th5 );
-    tr.appendChild( th6 );
-    tr.appendChild( th7 );
+        let td1 = document.createElement("td");
+        td1.innerHTML = '<input id=zeit name="name" placeholder="'+(reiheNr-1)+':00 Uhr - '+reiheNr+':00 Uhr" type="text" />';
+        tr.appendChild( td1 );
+
+        for(var i=0;i<7;i++){
+            spalteNr++;
+            let td1 = document.createElement("td");
+            td1.innerHTML = '<input id=reihe'+reiheNr+'MitSpalte'+spalteNr+' name="name" type="checkbox" />';
+            tr.appendChild( td1 );
+        }
+        spalteNr=0
+    };
+
+    var times = [];
+
+    let checkQuestion = (e) => {
+        times = [];
+        for(var i=1;i<8;i++){
+            for(var j=1;j<25;j++){
+                var temp = "reihe" + j + "MitSpalte" + i + "";
+                console.log(temp);
+                if(document.getElementById(temp).checked === true){
+                    window.alert("juhu");
+                    console.log("Yes");
+                    times.push(1);}
+                else{console.log("No");
+                    times.push(0);}
+            }
+        }
+        console.log(times);
+    } ;
+
+    for(var i=0;i<24;i++){
+        addRow();
+    }
+
+    let testButton = document.getElementById("testButton");
+    testButton.addEventListener( "click", checkQuestion);
 }
     //disabled macht checkbox vergraut
