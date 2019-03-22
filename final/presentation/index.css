@@ -106,7 +106,7 @@ li.suche:hover {
         background:#f1f1f3;
         margin-bottom: auto;
     }
-    ul {
+    nav > div > ul >li{
         width: 100%;
         display: none;
     }

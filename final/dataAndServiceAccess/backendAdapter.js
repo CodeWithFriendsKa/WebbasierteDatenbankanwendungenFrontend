@@ -258,6 +258,7 @@ function getPossibleTrainingTimes(userMail, userPasswort) {
             "BackendAdapter Methode getPossibleTrainingTimes wurde aufgerufen" + "\n" +
             "Mögliche Trainingszeiten: " + times
         );
+        return times;
     }
     else {
         return "exception";
