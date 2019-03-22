@@ -161,10 +161,6 @@ function putTrainerEntity(spieler, userMail, userPasswort) {
         return "exception";
     }
 }
-
-
-
-
 /**
  * Diese Methode gibt einen Trainer anhand seiner Mailadresse als Objekt zurück
  * Es werden 3 Parameter benötigt:
@@ -225,7 +221,6 @@ function postTrainerEntity(trainer, code) {
 /**
  * Diese Methode erlaubt es, die Trainingsdaten zu einem vorhandnenen Trainer zu übergeben
  */
-
 function putTrainerEntity(trainer, userMail, userPasswort) {
     const Http = new XMLHttpRequest();
     const url='http://localhost:8080/trainer/';
@@ -241,6 +236,28 @@ function putTrainerEntity(trainer, userMail, userPasswort) {
             + " geädnertes Objekt:"
         );
         console.log(trainer);
+    }
+    else {
+        return "exception";
+    }
+}
+/**
+ * Diese Methode erlaubt es, die verfügbaren Trainingszeiten einzusehen
+ */
+function getPossibleTrainingTimes(userMail, userPasswort) {
+    const Http = new XMLHttpRequest();
+    const url='http://localhost:8080/possibletimes';
+    console.log(url);
+    Http.open("GET", url, false);
+    Http.setRequestHeader("Authorization", "Basic " + btoa(userMail+ ":"+ userPasswort));
+    Http.send();
+
+    if (Http.status == 200){
+        var times = JSON.parse(Http.responseText);
+        console.log(
+            "BackendAdapter Methode getPossibleTrainingTimes wurde aufgerufen" + "\n" +
+            "Mögliche Trainingszeiten: " + times
+        );
     }
     else {
         return "exception";
