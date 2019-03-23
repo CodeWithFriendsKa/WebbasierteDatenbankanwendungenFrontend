@@ -16,6 +16,7 @@ function gruppeDetailAnsicht(index) {
     document.getElementById("content-trainer-konfig").className = "tab-pane fade";
     document.getElementById("content-trainer-detailansicht").className = "tab-pane fade in active";
     document.getElementById("content-spieler-ansicht-noch-keiner-gruppe-zugeordnet").className = "tab-pane fade";
+    document.getElementById("content-trainer-ansicht-keine-gruppen-gefunden").className = "tab-pane fade";
 
     makeDetailansicht(index);
 }

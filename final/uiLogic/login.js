@@ -29,6 +29,7 @@ function login() {
     document.getElementById("content-spieler-konfig").className ="tab-pane fade";
     document.getElementById("content-trainer-detailansicht").className = "tab-pane fade";
     document.getElementById("content-spieler-ansicht-noch-keiner-gruppe-zugeordnet").className = "tab-pane fade";
+    document.getElementById("content-trainer-ansicht-keine-gruppen-gefunden").className = "tab-pane fade";
 
     sessionStorage.clear();
     document.getElementById("login-error").innerText = "";
@@ -121,6 +122,10 @@ function makeLogin() {
             catch (e) {
                 if (e instanceof AuthorizationException){
                     document.getElementById("login-error").innerText = "Mail oder Passwort falsch!";
+                }
+                else if (e instanceof GruppeNotFoundException){
+                    sessionStorage.setItem("keine-gruppen", "true");
+                    location.hash = "#trainer-ansicht";
                 }
                 else {
                     document.getElementById("login-error").innerText = e.toString();

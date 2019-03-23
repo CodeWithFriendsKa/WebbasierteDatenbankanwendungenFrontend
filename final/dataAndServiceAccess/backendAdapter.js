@@ -39,6 +39,9 @@ function findAllGruppen(userMail, userPasswort) {
     else if (Http.status == 403){
         throw new AuthorizationException("Du bist nicht berechtigt alle Gruppen zu holen");
     }
+    else if (Http.status == 404){
+        throw new GruppeNotFoundException("Keine Gruppen gefunden");
+    }
     else throw new BadRequestException("clientseitiger Fehler");
 }
 /**

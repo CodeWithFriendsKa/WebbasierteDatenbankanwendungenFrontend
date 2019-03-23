@@ -18,6 +18,7 @@ function registrieren() {
     document.getElementById("content-spieler-konfig").className ="tab-pane fade fade";
     document.getElementById("content-trainer-detailansicht").className = "tab-pane fade";
     document.getElementById("content-spieler-ansicht-noch-keiner-gruppe-zugeordnet").className = "tab-pane fade";
+    document.getElementById("content-trainer-ansicht-keine-gruppen-gefunden").className = "tab-pane fade";
 
 
     console.log("setzte Sichtbarkeiten für die Registrierung");
@@ -58,6 +59,9 @@ function registriereSpieler(mail, password){
     sessionStorage.setItem("new-spieler-registration", "true");
     location.hash = "#spieler-ansicht";
 }
+/*
+todo wenn man sich als Trainer registriert kommt im Moment noch ein Error, da die "Gruppe Not Found" Exception (siehe login Trainer) noch nicht richtig gefangen und weiterverarbeitet wird
+ */
 function registriereTrainer(mail, password){
     let code = document.getElementById("register-trainer-code").value;
     let trainer = new Trainer(mail, password);
