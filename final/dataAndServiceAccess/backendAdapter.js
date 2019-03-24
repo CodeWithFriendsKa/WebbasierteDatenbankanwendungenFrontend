@@ -279,7 +279,6 @@ function startAlgo(userMail, userPasswort) {
     Http.send();
 
     if (Http.status == 200){
-        var times = JSON.parse(Http.responseText);
         console.log("BackendAdapter Methode startAlgo wurde aufgerufen");
     }
     else {
@@ -298,7 +297,6 @@ function spielerTragtEureZeitenEin(userMail, userPasswort) {
     Http.send();
 
     if (Http.status == 200){
-        var times = JSON.parse(Http.responseText);
         console.log("BackendAdapter Methode tragt eure Zeiten ein wurde aufgerufen");
     }
     else {
