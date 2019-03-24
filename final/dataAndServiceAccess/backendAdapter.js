@@ -144,7 +144,7 @@ function postSpielerEntity(spieler) {
  * Diese Methode erlaubt es, die Trainingsdaten zu einem vorhandnenen Spieler zu übergeben
  */
 
-function putTrainerEntity(spieler, userMail, userPasswort) {
+function putSpielerEntity(spieler, userMail, userPasswort) {
     const Http = new XMLHttpRequest();
     const url='http://localhost:8080/spieler/';
     console.log(url);
@@ -262,6 +262,44 @@ function getPossibleTrainingTimes(userMail, userPasswort) {
             "Mögliche Trainingszeiten: " + times
         );
         return times;
+    }
+    else {
+        return "exception";
+    }
+}
+/**
+ * Diese Methode erlaubt es den algo zu starten
+ */
+function startAlgo(userMail, userPasswort) {
+    const Http = new XMLHttpRequest();
+    const url='http://localhost:8080/startalgo';
+    console.log(url);
+    Http.open("POST", url, false);
+    Http.setRequestHeader("Authorization", "Basic " + btoa(userMail+ ":"+ userPasswort));
+    Http.send();
+
+    if (Http.status == 200){
+        var times = JSON.parse(Http.responseText);
+        console.log("BackendAdapter Methode startAlgo wurde aufgerufen");
+    }
+    else {
+        return "exception";
+    }
+}
+/**
+ * Diese Methode erlaubt es den algo zu starten
+ */
+function spielerTragtEureZeitenEin(userMail, userPasswort) {
+    const Http = new XMLHttpRequest();
+    const url='http://localhost:8080/writetimes';
+    console.log(url);
+    Http.open("POST", url, false);
+    Http.setRequestHeader("Authorization", "Basic " + btoa(userMail+ ":"+ userPasswort));
+    Http.send();
+
+    if (Http.status == 200){
+        var times = JSON.parse(Http.responseText);
+        console.log("BackendAdapter Methode tragt eure Zeiten ein wurde aufgerufen");
     }
     else {
         return "exception";

@@ -51,6 +51,11 @@ function makeRegistrieren() {
         }
     }
 }
+/**
+ *  todo Emil: wenn eine WriteNewTrainingsTimesException geworfen wird mache folgendes:
+ *  - setze im SessionStorrage eine Info, dass die trainingszeiten zu setzen sind
+ *  - wechsle zur trainer-ansicht
+ */
 function registriereSpieler(mail, password){
     let spieler = new Spieler(mail, password);
     postSpielerEntity(spieler);
@@ -59,8 +64,10 @@ function registriereSpieler(mail, password){
     sessionStorage.setItem("new-spieler-registration", "true");
     location.hash = "#spieler-ansicht";
 }
-/*
-todo wenn man sich als Trainer registriert kommt im Moment noch ein Error, da die "Gruppe Not Found" Exception (siehe login Trainer) noch nicht richtig gefangen und weiterverarbeitet wird
+/**
+ *  todo Emil: wenn eine WriteNewTrainingsTimesException geworfen wird mache folgendes:
+ *  - setze im SessionStorrage eine Info, dass die trainingszeiten zu setzen sind
+ *  - wechsle zur trainer-ansicht
  */
 function registriereTrainer(mail, password){
     let code = document.getElementById("register-trainer-code").value;

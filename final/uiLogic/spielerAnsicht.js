@@ -22,7 +22,11 @@ function spielerAnsicht() {
     document.getElementById("content-trainer-ansicht-keine-gruppen-gefunden").className = "tab-pane fade";
 
     baueSpielerAnsicht();
-}
+}/**
+ * todo Emil: wenn im SessionStorrage steht, dass die Trainingszeiten zu setzen sind mache folgendes:
+ * - zeige die Konfig an
+ * - ansonsten mache nichts
+ */
 function baueSpielerAnsicht() {
     if (sessionStorage.getItem("new-spieler-registration") === "true" || sessionStorage.getItem("gruppe not found") === "true"){
         document.getElementById("content-spieler-ansicht").className = "tab-pane fade";

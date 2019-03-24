@@ -17,7 +17,9 @@ function trainerkonfig() {
 
     trainerKonfigKalender();
 }
-
+/**
+ * todo Emil: Zeiten auslesen und mit BackendAdapter an Backend schicken
+ */
 function trainerKonfigKalender() {
     var reiheNr = 0;
     var spalteNr = 0;
@@ -67,3 +69,24 @@ function trainerKonfigKalender() {
     testButton.addEventListener( "click", checkQuestion);
 }
     //disabled macht checkbox vergraut
+
+/**
+ *  todo Emil: methode schreiben, die die Inhalte der Tabelle dynamisch ausließt und ein int[] erzeugt
+ */
+function readTrainerKonfig() {
+    let zeiten = {};
+    //...
+    return zeiten;
+}
+/**
+ * todo Emil: Methode (+ Button in der index.html) welche den algo über den backndAdapter startet
+ */
+function trainerKonfigStarteAlgo() {
+    //...
+}
+/**
+ * todo Emil: Methode (+ Button in der index.html) welche über den BackendAdapter mitteilt, dass die Spieler ihre Trainingszeiten eintragen sollen
+ */
+function trainerKonfigStarteAlgo() {
+    //...
+}

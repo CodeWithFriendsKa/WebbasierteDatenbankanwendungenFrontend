@@ -22,6 +22,9 @@ function spielerKonfig() {
 
 }
 
+/**
+ * todo Emil: Zeiten auslesen und mit BackendAdapter an Backend schicken
+ */
 function setSpielerTrainingData() {
 
     //console.log(document.getElementById("tabelle").length);
@@ -97,3 +100,12 @@ function setSpielerTrainingData() {
     let uncheckButton = document.getElementById("uncheckButton");
     uncheckButton.addEventListener( "click", uncheck);
 }
+/**
+ *  todo Emil: methode schreiben, die die Inhalte der Tabelle dynamisch ausließt und ein int[] erzeugt
+ */
+function readSpielerKonfig() {
+    let zeiten = {};
+    //...
+    return zeiten;
+}
+

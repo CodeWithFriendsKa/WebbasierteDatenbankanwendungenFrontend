@@ -93,6 +93,11 @@ function makeLogin() {
                 sessionStorage.setItem("new-spieler-registration", "false");
                 location.hash = "#spieler-ansicht";
             }
+                /**
+                 *  todo Emil: wenn eine WriteNewTrainingsTimesException geworfen wird mache folgendes:
+                 *  - setze im SessionStorrage eine Info, dass die trainingszeiten zu setzen sind
+                 *  - wechsle zur spieler-ansicht
+                 */
             catch (e) {
                 console.log(e);
                 if (e instanceof GruppeNotFoundException){
@@ -119,6 +124,11 @@ function makeLogin() {
                 sessionStorageSetAllGruppen("all-gruppen", gruppen);
                 location.hash = "#trainer-ansicht";
             }
+            /**
+             *  todo Emil: wenn eine WriteNewTrainingsTimesException geworfen wird mache folgendes:
+             *  - setze im SessionStorrage eine Info, dass die trainingszeiten zu setzen sind
+             *  - wechsle zur trainer-ansicht
+             */
             catch (e) {
                 if (e instanceof AuthorizationException){
                     document.getElementById("login-error").innerText = "Mail oder Passwort falsch!";
